@@ -1,0 +1,8 @@
+
+<h3>編集ページ</h3>
+<%= form_with model: @p_definition, local: true do |f| %>
+<%= f.text_area :title, placeholder:"メモのタイトルを入力する" %>
+<%= f.text_area :body, placeholder:"メモのタイトルを入力する" %>
+<%= f.submit "更新する" %>
+<% end %>
+<%= link_to '定義一覧へ', root_path %>

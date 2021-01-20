@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Resume - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+         <div class="container">
+         <div class="inner">
+        <div class="nav">
+        <% if user_signed_in? %>
+                <div> 
+                <%= link_to "ログアウト", destroy_user_session_path, method: :DELETE, class: :orange %>
+                 <%= link_to "定義", "#definitions", class: :orange_definition %>
+                </div> 
+
+            <% else %> 
+            <div>
+                <%= link_to "ログイン", new_user_session_path, class: :orange %>
+                <%= link_to "新規登録", new_user_registration_path, class: :orange %>
+                </div> 
+            <% end %>
+            </div>
+      </div>
+      <main class="main">
+  <div class="inner">
+    <% if user_signed_in? %>
+      <div class="greeting"> 
+         こんにちは、
+         <%= link_to "#{current_user.nickname}さん", user_path(current_user), class: :greeting__link %>
+      </div> 
+   <% else %> 
+      <div class="grid-6">
+            <%= link_to "", new_user_session_path, class: "post" %>
+            <%= link_to "", new_user_registration_path, class: "post" %>
+          </div>
+          <% end %>
+        </div> 
+        </div> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            
+                <span class="d-block d-lg-none">褒め方辞典</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">褒め方辞典とは？</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">「褒める」でマネジメント？</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">褒めると倫理について</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">「褒め方辞典」がおすすめの方</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">本サービスのご利用方法について</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- 褒め方辞典とは？-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <br><h1 class="mb-0">
+                        褒め方
+                        <span class="text-primary">辞典</span>
+                    </h1></br>
+                    
+                    <p class="lead mb-5">褒めることを軸に倫理を学び、マネジメントが勉強できるサービスです</p>
+                    <h3><div class="index-font">index</div></h3>
+                    <div class="social-icons">
+                        <a class="index" href="#experience">褒め方辞典とは？</a>
+                        <a class="index" href="#education">「褒める」でマネジメント？</a>    
+                        <a class="index" href="#skills">褒めると倫理について</a>
+                        <a class="index" href="#interests">本サービスがおすすめの方</a>
+                        <a class="index" href="#awards">サービスの使い方について</a>
+                        </div>
+                     </div>
+            </section>
+            <hr class="m-0" />
+            <!-- 褒め方辞典の概要-->
+            <section class="resume-section" id="experience">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">褒め方辞典とは？</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <p>褒め方辞典では正解のない褒め方が勉強でき、その褒め方を軸にマネジメントの仕方が勉強できます。</p>
+                            <p>皆さまが定義し、その定義に対して皆さま同士でご回答いただきます。</p>
+                            <p>ご回答に対して皆さまがご投票いただき、褒め方や倫理の在り方の最適解を出していただく、サービスでございます。</p>
+                        </div>
+                    </div>
+                    <%= link_to "next => 「褒める」でマネジメント？", "#education" %>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- 褒めることでマネジメントとは？-->
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">「褒める」でマネジメント？</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <br><h3 class="mb-0">マネジメントは「叱る」よりも「褒める」が効果あり</h3></br>
+                            <div class="flex-grow-1">
+                                <p>賞賛の言葉が相手のやる気を向上させる心理現象が科学的に立証されています。</p>
+                                <p>これは1925年にアメリカの発達心理学者エリザベス・ハーロック博士が、行った実験により証明されたエンハンシング効果です。</p>
+                                <p>本サービスでも「褒める」ことを軸にマネジメントをすることを推奨しております。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <%= link_to "next => 褒めると倫理について", "#skills" %>
+                </div>
+
+
+            </section>
+            <hr class="m-0" />
+            <!-- 褒めると倫理について-->
+            <section class="resume-section" id="skills">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">褒めると倫理について</h2>
+                    <div class="flex-grow-1">
+                        <br><h3 class="mb-0">褒める行為の前提に倫理がある</h3></br>
+                        <p>人としての倫理が伴って初めて、褒めるという行為が成り立ちます。</p>
+                        <p>また褒める相手との関係性や、相手からの印象により褒める効果が変動します。</p>
+                        <p>なので、褒める前提となる倫理についてもマネジメントにおいては重要になります。</p>
+                    
+                    </div>
+                <%= link_to "next => 本サービスがおすすめの方", "#interests" %>
+                </div>
+
+            </section>
+            <hr class="m-0" />
+            <!-- 本サービスがおすすめの方-->
+            <section class="resume-section" id="interests">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">「褒め方辞典」がおすすめの方</h2>
+                    <div class="flex-grow-1">
+                        <br><h3 class="mb-0">マネジメントをする人、マネジメントをされる人</h3></br>
+                        <p>会社員として働く人</p>
+                        <p>マネジメントを必要とする、または勉強する人</p>
+                        <p>人間関係を円滑にしたい人、等</p>
+                    </div>
+                <%= link_to "next => サービスの使い方について", "#awards" %>
+            </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Awards-->
+            <section class="resume-section" id="awards">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">本サービスのご利用方法について</h2>
+                    <nobr><p>（本サービスはログインすることでご利用いただけます。ログイン後「定義」ボタンをクリック）</p></nobr>
+                    <div class="flex-grow-1">
+                        <br><h3 class="mb-0">流れは、定義→回答→「いいね」</h3></br>
+                        <nobr><p>倫理の在り方や褒め方を皆さまで定義し、自らが思う最良のものを投票で決めていだきます。</p></nobr>
+                        <nobr><p>倫理パートと褒め方パートがあり、それぞれ定義・回答してみましょう。</p></nobr>
+
+                        
+                        <br><div style="padding: 10px; margin-bottom: 10px; border: 1px solid #b84c00;"><big><b><p><span style="background-color:#FFCACA;">1 定義</span></p></b></big></nobr>
+                        <nobr><p>皆さんご自身で「こんなときどうする？」の各シチュエーションについてご定義いただきます。</p></nobr>
+                        <nobr><p>定義はタイトルと定義詳細の2つを入力し、アップしてください。</p></br></nobr>
+                        <nobr><p>倫理パート 　例①）成長のために部下は叱っていいものか？</p></br></nobr>
+                        <nobr><p>褒めるパート 例②）毎日気持ちの良い挨拶ができている部下にどう褒めたら良いのか？</p></br></nobr></div>
+
+                        <br><div style="padding: 10px; margin-bottom: 10px; border: 1px solid #b84c00;"><big><b><p><span style="background-color:#FFCACA;">2 回答</span></p></b></big></nobr>
+                        <nobr><p>1 で定義したシチュエーションで、「ご自身だったらどうするか？」をご回答いただきます。</p></br></nobr>
+                        <nobr><p>倫理パート 　例①）ケースバイケース、人にもよりけりで一概に良いとは言えません。</p></nobr>
+                        <nobr><p>　　　　　　　　　成長を思って部下を叱るのであれは説得よりも納得できる叱り方・・・</p></br></nobr>
+                        <nobr><p>褒めるパート 例②）〜さんが挨拶することで私も今日も元気に仕事ができます。</p></nobr>
+                        <nobr><p>　　　　　　　　　今日もとっても嬉しいです。</p></br></nobr></div>
+
+
+                        <br><div style="padding: 10px; margin-bottom: 10px; border: 1px solid #b84c00;"><big><b><p><span style="background-color:#FFCACA;">3 投票</span></p></b></big>
+                        <nobr><p>2 で回答いただいた内容の中で、ご自身が思う一番いい言動を選び「いいね」をしてください。</p></br></nobr></div>
+                        <nobr><br><p>票の多い少ないに関係なしに、それぞれのご定義とご回答を尊重し、自らの学びとしましょう。</p></br></nobr>
+
+
+                    </div>
+                <%= link_to "next => 新規登録して褒め方辞典を使って見よう", new_user_registration_path %></br>
+                <%= link_to "next => 登録済みの方はこちらからログイン", new_user_session_path %>
+            </div>
+                </div>
+            </section>
+             <!-- definitions-->
+             <% if user_signed_in? %>
+            <section class="resume-section" id="definitions">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">定義一覧</h2>
+                    <p class="lead mb-5">シチュエーションを定義し、その定義に対して回答してみましょう</p>
+                    <div class="social-icons">
+                        <br><a class="index" href="#ethics">倫理パート</a></br>
+                        <a class="index" href="#praises">褒めるパート</a>    
+                        </div>
+                     </div>
+                   
+                </div>
+            </section>
+             <!-- 倫理パート-->
+            <section class="resume-section" id="ethics">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">倫理パート</h2>
+                    <%= link_to "倫理のシチュエーションについて定義", new_definition_path, class: :nav__btn %>
+                    <% @definitions.each do |definition| %>
+                        <ul>
+                        <li>
+                        <br>
+                        <li class="comments_list">
+                        <%= link_to definition.user.nickname, "/users/#{definition.user_id}", class: :comment_user %>
+                        <div style="padding: 10px; margin-bottom: 10px; border: 5px double #000000; background-color: #000000">                        
+                        <%=link_to definition.title, definition_path(definition.id) %>
+                        </div>
+                        <%= @todays_date%>
+                        </br>
+                        </li>
+                        </ul>
+                   <% end %>
+                </div>
+            </section>
+             <!-- 褒めるパート-->
+            <section class="resume-section" id="praises">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">褒めるパート</h2>
+                    <%= link_to "褒めるのシチュエーションについて定義", new_p_definition_path, class: :nav__btn %>
+                        <% @p_definitions.each do |p_definition| %>
+                        <ul>
+                        <li>
+                        <br>
+                        <li class="comments_list">
+                        <%= link_to p_definition.user.nickname, "/users/#{p_definition.user_id}", class: :comment_user %>
+                        <div style="padding: 10px; margin-bottom: 10px; border: 5px double #000000; background-color: #000000">                        
+                        <%=link_to p_definition.title, p_definition_path(p_definition.id) %>
+                        </div>
+                        <%= @todays_date%>
+                        </br>
+                        </li>
+                        </ul>
+                   <% end %>
+                    
+                   
+                </div>
+            </section>
+            <% end %>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Resume - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+<!-- Navigation-->
+ <div class="container">
+         <div class="inner">
+        <div class="nav">
+        
+        
+       <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <%# <a class="navbar-brand js-scroll-trigger" href="#page-top">           
+                <span class="d-block d-lg-none">褒め方辞典</span>
+            </a> %>
+                  <%= link_to "褒め方辞典", root_path, class: :prototype__user %></br>
+
+
+           
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                  <div class="social-icons">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">回答一覧</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">一番票数の多い回答を見る</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">回答のデータ解析</a></li>
+              </div>
+                </ul>
+            </div>
+            </div>
+            
+        </nav>
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+      <p class="prototype__hedding">
+        <%# <%= "プロトタイプのタイトル"%> 
+        <br><%= @definition.title%></br>
+      </p>
+      <p class="prototype__hedding">
+      <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px double #333333; border-radius: 10px; background-color: #FFCC99; color: #000000;"><%= @definition.body %></div>
+      </p>
+        <div class="prototype__manage">
+        <% if user_signed_in? && current_user.id == @definition.user_id %>
+          <%= link_to "編集する", edit_definition_path(@definition.id), class: :prototype__btn %>
+          <%= link_to "削除する", definition_path(@definition), class: :prototype__btn, method: :delete %>
+        <% end %>
+      <%# // 画像があれば表示する %>
+
+      <%# // answerゾーン %>
+    </div>
+      <div class="prototype__comments">
+       <% if user_signed_in? %> 
+         <% if current_user %>
+          <%= form_with(model: [@definition, @answer], local: true) do |f| %>
+            <div class="field">
+              <%= f.label :answer, "回答" %><br />
+              <%= f.text_field :answer %>
+            </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn  %>
+            </div>
+          <% end %> 
+        <% end %>
+        <ul class="comments_lists">
+              <%= " 回答一覧 "%>
+              <% if @answers %>
+                <% @answers.each do |answer| %>
+              <li class="comments_list">
+                <%= link_to answer.user.nickname, "/users/#{answer.user_id}", class: :comment_user %>
+                <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #FFFFEE; color: #000000;"><%= answer.answer %></div>  
+                <%= @todays_date%>      
+              <% end %>
+          <% end %>
+        <% end %>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+       
+      <%# <div class="prototype__comments">
+        <% if user_signed_in? %>
+         <%# <% if current_user %> 
+          <%# <%= form_with(model: [@definition, @comment], local: true) do |f| %> 
+            <%# <div class="field"> %>
+              <%# <%= f.label :text, "コメント" %> 
+               <%# <%= f.text_field :text %>  
+             <%# </div>  %>
+            <%# <div class="actions"> %>
+              <%# <%= f.submit "送信する", class: :form__btn %>  
+            <%# </div> %>
+           <%# <% end %>   
+        <%# <% end %> 
+        <%# <ul class="comments_lists">  %>
+              <%# <%= " コメントのテキスト "%>  
+              <%# <% if @comments %>  
+                <%# <% @comments.each do |comment| %>  
+                <%# <%= link_to comment.user.name, "/users/#{comment.user_id}", class: :comment_user %> 
+                 <%# <%= comment.text %>         
+                <%# <% end %>
+              <%# <% end %> 
+            <%# <% end %> 
+
+            <%# </li> %>
+        <%# </ul> %>
+      <%# </div> %>
+    <%# </div> %>
+  </div>
+</main>
+</body>
+</html>
