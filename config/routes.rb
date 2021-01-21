@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "definitions#index"
   resources :definitions do
-    resources :answers, only: :create
+    resources :answers do
+      resource :likes, only: [:create, :destroy]
+    end
     resources :comments, only: :create
   end
 
