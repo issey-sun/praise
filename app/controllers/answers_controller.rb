@@ -9,8 +9,8 @@ class AnswersController < ApplicationController
         @answers = @definition.answers
         render "definitions/show"
       end
-  end
 
+  end
 
   private
   def answer_params

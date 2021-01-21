@@ -18,4 +18,8 @@ class User < ApplicationRecord
   validates :sex_id
   end
 
+  def already_liked?(answer)
+    self.likes.exists?(answer_id: answer.id)
+  end
+
 end

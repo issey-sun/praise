@@ -5,5 +5,7 @@ class PAnswer < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  validates :answer, presence: true
+  # validates :answer, presence: true
+
+
 end

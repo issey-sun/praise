@@ -76,12 +76,26 @@
           <% end %> 
         <% end %>
         <ul class="comments_lists">
+
               <%= " 回答一覧 "%>
               <% if @answers %>
                 <% @answers.each do |answer| %>
               <li class="comments_list">
                 <%= link_to answer.user.nickname, "/users/#{answer.user_id}", class: :comment_user %>
-                <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #FFFFEE; color: #000000;"><%= answer.answer %></div>  
+                <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #FFFFEE; color: #000000;"><%= answer.answer %></div> 
+                
+
+                 <% if current_user.already_liked?(answer) %>
+                  <%= link_to definition_answer_likes_path(@definition,answer), method: :delete do %>
+                  <i class="fas fa-heart"></i>
+                  <% end %>
+                  <% else %>
+                  <%= link_to definition_answer_likes_path(@definition,answer), method: :post do %>
+                <i class="far fa-heart"></i>
+                  <% end %>
+                 <% end %>
+                 <%= answer.likes.count %>
+                
                 <%= @todays_date%>      
               <% end %>
           <% end %>
