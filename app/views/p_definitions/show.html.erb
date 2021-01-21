@@ -81,7 +81,19 @@
                 <% @p_answers.each do |p_answer| %>
               <li class="comments_list">
                 <%= link_to p_answer.user.nickname, "/users/#{p_answer.user_id}", class: :comment_user %>
-                <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #FFFFEE; color: #000000;"><%= p_answer.answer %></div>  
+                <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #FFFFEE; color: #000000;"><%= p_answer.answer %></div>
+
+                <% if current_user.already_p_liked?(p_answer) %>
+                  <%= link_to p_definition_p_answer_p_likes_path(@p_definition,p_answer), method: :delete do %>
+                  <i class="fas fa-heart"></i>
+                  <% end %>
+                  <% else %>
+                  <%= link_to p_definition_p_answer_p_likes_path(@p_definition,p_answer), method: :post do %>
+                <i class="far fa-heart"></i>
+                  <% end %>
+                 <% end %>
+                 <%= p_answer.p_likes.count %>
+
                 <%= @todays_date%>      
               <% end %>
           <% end %>
