@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :users, only: :show
 
   resources :p_definitions do
-    resources :p_answers, only: :create
+    resources :p_answers do
+      resource :p_likes, only: [:create, :destroy]
   end
+end
 
 end

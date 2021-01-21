@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_20_070019) do
+ActiveRecord::Schema.define(version: 2021_01_21_132709) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -73,11 +73,9 @@ ActiveRecord::Schema.define(version: 2021_01_20_070019) do
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "answer_id"
-    t.bigint "p_answer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["answer_id"], name: "index_likes_on_answer_id"
-    t.index ["p_answer_id"], name: "index_likes_on_p_answer_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -100,6 +98,15 @@ ActiveRecord::Schema.define(version: 2021_01_20_070019) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_p_definitions_on_user_id"
+  end
+
+  create_table "p_likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "p_answer_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["p_answer_id"], name: "index_p_likes_on_p_answer_id"
+    t.index ["user_id"], name: "index_p_likes_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -129,9 +136,10 @@ ActiveRecord::Schema.define(version: 2021_01_20_070019) do
   add_foreign_key "comments", "users"
   add_foreign_key "definitions", "users"
   add_foreign_key "likes", "answers"
-  add_foreign_key "likes", "p_answers"
   add_foreign_key "likes", "users"
   add_foreign_key "p_answers", "p_definitions"
   add_foreign_key "p_answers", "users"
   add_foreign_key "p_definitions", "users"
+  add_foreign_key "p_likes", "p_answers"
+  add_foreign_key "p_likes", "users"
 end
