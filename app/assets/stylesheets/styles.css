@@ -60,7 +60,6 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -4323,7 +4322,7 @@ input[type=button].btn-block {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
@@ -10473,12 +10472,6 @@ section.resume-section .resume-section-content {
 
 
 /*まずはお決まりのボックスサイズ算出をborer-boxに */
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-}
 
 
 
@@ -10534,3 +10527,62 @@ button.btn {
   top: calc(50% - .5em);
   right: 1rem;
   }
+
+  .rating-box .ratings .fa{
+  font-size: 30px;
+  color:#ffcc00;
+  cursor: pointer;
+}
+
+.main-rating {
+  display: flex;
+}
+
+.rating-value-display {
+  font-size: 20px;
+}
+
+/* ////// reviews*/
+.rating-box .ratings .fa{
+  font-size: 30px;
+  color:#ffcc00;
+  cursor: pointer;
+}
+
+.main-rating {
+  display: flex;
+}
+
+.rating-value-display {
+  font-size: 20px;
+}
+
+/* /////////// definitions*/
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+}
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #fc3;
+}
+.star-rating-back {
+  color: #ccc;
+}
+
+.average-score {
+  display: flex;
+}
+.average-score-display {
+  font-size: 16px;
+}
+
+/* ////// application*/
+.notification:not(:last-child){
+  margin-bottom: 0;
+}
