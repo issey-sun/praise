@@ -22,6 +22,7 @@ class DefinitionsController < ApplicationController
   def show
     @definition = Definition.find(params[:id])
     @review = Review.new
+    @p_review = PReview.new
     @answer = Answer.new
     @answers = @definition.answers.includes(:user)
     @comment = Comment.new

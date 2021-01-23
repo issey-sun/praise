@@ -253,6 +253,29 @@
                     <%= link_to "褒めるのシチュエーションについて定義", new_p_definition_path, class: :nav__btn %>
                         <% @p_definitions.each do |p_definition| %>
                         <ul>
+                        <div class="card mb-6">
+                            <div class="card-content">
+                            <div class="content">
+                            <div class="content average-score">
+                            <div class="star-rating mb-2">
+                            <div class="star-rating-front" style="width: <%= p_definition.p_review_score_percentage %>%">★★★★★</div>
+                            <div class="star-rating-back">★★★★★</div>
+                            </div>
+                            <div class="average-score-display ml-3 pt-2">
+                            <%= p_definition.p_avg_score %>点（<%= p_definition.p_reviews.count %>件のレビュー）
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            <footer class="card-footer">
+                            <%= link_to p_definition_p_reviews_path(p_definition), class: "button card-footer-item" do %>
+                             レビューを見る
+                            <% end %>
+                            <%= link_to new_p_definition_p_review_path(p_definition), class: "button card-footer-item" do %>
+                             レビューを書く
+                            <% end %>
+                            </footer>
+                            </div>
                         <li>
                         <br>
                         <li class="comments_list">

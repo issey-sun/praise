@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :p_likes, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :p_reviews, dependent: :destroy
+
 
   
   validates :nickname, presence: true

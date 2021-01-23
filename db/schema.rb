@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_22_033155) do
+ActiveRecord::Schema.define(version: 2021_01_23_123140) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -109,6 +109,17 @@ ActiveRecord::Schema.define(version: 2021_01_22_033155) do
     t.index ["user_id"], name: "index_p_likes_on_user_id"
   end
 
+  create_table "p_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
+    t.integer "score"
+    t.bigint "user_id"
+    t.bigint "p_definition_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["p_definition_id"], name: "index_p_reviews_on_p_definition_id"
+    t.index ["user_id"], name: "index_p_reviews_on_user_id"
+  end
+
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.integer "score"
@@ -153,6 +164,8 @@ ActiveRecord::Schema.define(version: 2021_01_22_033155) do
   add_foreign_key "p_definitions", "users"
   add_foreign_key "p_likes", "p_answers"
   add_foreign_key "p_likes", "users"
+  add_foreign_key "p_reviews", "p_definitions"
+  add_foreign_key "p_reviews", "users"
   add_foreign_key "reviews", "definitions"
   add_foreign_key "reviews", "users"
 end
