@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :answers do
       resource :likes, only: [:create, :destroy]
     end
+    resources :reviews, only: [:index, :create, :new]
     resources :comments, only: :create
   end
 
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
     resources :p_answers do
       resource :p_likes, only: [:create, :destroy]
   end
+  resources :p_reviews, only: [:index, :create, :new]
 end
 
 end

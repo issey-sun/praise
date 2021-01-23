@@ -1,5 +1,5 @@
 class DefinitionsController < ApplicationController
- 
+ before_action :authenticate_user!, only: [:show]
   def new
     @definition = Definition.new
   end
@@ -21,6 +21,8 @@ class DefinitionsController < ApplicationController
 
   def show
     @definition = Definition.find(params[:id])
+    @review = Review.new
+    @p_review = PReview.new
     @answer = Answer.new
     @answers = @definition.answers.includes(:user)
     @comment = Comment.new

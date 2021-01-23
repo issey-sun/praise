@@ -1,0 +1,44 @@
+<section class="section mt-6">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <div class="card mb-6">
+          <header class="card-header">
+            <p class="card-header-title">
+              <%= @p_definition.title %> 
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content average-score">
+              <div class="star-rating mb-2">
+                <div class="star-rating-front" style="width: <%= @p_definition.p_review_score_percentage %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div>
+              </div>
+              <div class="average-score-display ml-3 pt-2">
+              <%= @p_definition.p_avg_score %>点（<%= @p_definition.p_reviews.count %>件のレビュー）
+              </div>
+            </div>
+          </div>
+        </div>
+        <table class="table is-fullwidth has-text-centered">
+          <thead>
+            <tr>
+              <th>ユーザー</th><th>点数</th><th>内容</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @p_reviews.each do |p_review| %>
+              <tr>
+                <td><%= p_review.user.nickname %></td>
+                <td><%= p_review.score %></td>
+                <td><%= p_review.content %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+          <br><%= link_to "< 一覧に戻る >", root_path %></br>
+      </div>
+    </div>
+  </div>
+  
+</section>

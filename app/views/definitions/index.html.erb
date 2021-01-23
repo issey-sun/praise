@@ -8,7 +8,7 @@
         <title>Resume - Start Bootstrap Theme</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <%# <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script> %>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
@@ -60,7 +60,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">褒め方辞典とは？</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">「褒める」でマネジメント？</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">褒めると倫理について</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">「褒め方辞典」がおすすめの方</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">褒め方辞典がおすすめの方</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">本サービスのご利用方法について</a></li>
                 </ul>
             </div>
@@ -209,6 +209,29 @@
                     <%= link_to "倫理のシチュエーションについて定義", new_definition_path, class: :nav__btn %>
                     <% @definitions.each do |definition| %>
                         <ul>
+                                <div class="card mb-6">
+                                    <div class="card-content">
+                                    <div class="content">
+                                        <div class="content average-score">
+                                        <div class="star-rating mb-2">
+                                            <div class="star-rating-front" style="width: <%= definition.review_score_percentage %>%">★★★★★</div>
+                                            <div class="star-rating-back">★★★★★</div>
+                                        </div>
+                                        <div class="average-score-display ml-3 pt-2">
+                                            <%= definition.avg_score %>点（<%= definition.reviews.count %>件のレビュー）
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                    <%= link_to definition_reviews_path(definition), class: "button card-footer-item" do %>
+                                        レビューを見る
+                                    <% end %>
+                                    <%= link_to new_definition_review_path(definition), class: "button card-footer-item" do %>
+                                        レビューを書く
+                                    <% end %>
+                                    </footer>
+                                </div>
                         <li>
                         <br>
                         <li class="comments_list">
@@ -230,6 +253,29 @@
                     <%= link_to "褒めるのシチュエーションについて定義", new_p_definition_path, class: :nav__btn %>
                         <% @p_definitions.each do |p_definition| %>
                         <ul>
+                        <div class="card mb-6">
+                            <div class="card-content">
+                            <div class="content">
+                            <div class="content average-score">
+                            <div class="star-rating mb-2">
+                            <div class="star-rating-front" style="width: <%= p_definition.p_review_score_percentage %>%">★★★★★</div>
+                            <div class="star-rating-back">★★★★★</div>
+                            </div>
+                            <div class="average-score-display ml-3 pt-2">
+                            <%= p_definition.p_avg_score %>点（<%= p_definition.p_reviews.count %>件のレビュー）
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            <footer class="card-footer">
+                            <%= link_to p_definition_p_reviews_path(p_definition), class: "button card-footer-item" do %>
+                             レビューを見る
+                            <% end %>
+                            <%= link_to new_p_definition_p_review_path(p_definition), class: "button card-footer-item" do %>
+                             レビューを書く
+                            <% end %>
+                            </footer>
+                            </div>
                         <li>
                         <br>
                         <li class="comments_list">
@@ -257,3 +303,4 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+

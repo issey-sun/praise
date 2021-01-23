@@ -7,10 +7,24 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+    <%# <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script> %>
+    <%# <script src="https://kit.fontawesome.com/484e6509e8.js" crossorigin="anonymous"></script> %>
+    <script src="https://kit.fontawesome.com/aa26791a22.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
+      <% if flash[:notice] %>
+        <div class="notification is-info">
+          <p class="notice"><%= notice %></p>
+          <div>
+          <% end %>
+      <% if flash[:alert] %>
+        <div class="notification is-danger">
+          <p class="alert"><%= alert %></p>
+          <div>
+          <% end %>
+
+
     <%= yield %>
   </body>
 </html>

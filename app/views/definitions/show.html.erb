@@ -8,7 +8,7 @@
         <title>Resume - Start Bootstrap Theme</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <%# <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script> %>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
@@ -17,37 +17,44 @@
     </head>
     <body id="page-top">
 <!-- Navigation-->
- <div class="container">
-         <div class="inner">
-        <div class="nav">
-        
-        
-       <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <%# <a class="navbar-brand js-scroll-trigger" href="#page-top">           
-                <span class="d-block d-lg-none">褒め方辞典</span>
-            </a> %>
+  <div class="container">
+
+         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
                   <%= link_to "褒め方辞典", root_path, class: :prototype__user %></br>
+                  
 
-
-           
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                  <div class="social-icons">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">回答一覧</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">一番票数の多い回答を見る</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">回答のデータ解析</a></li>
-              </div>
-                </ul>
+               </ul>
             </div>
-            </div>
-            
         </nav>
+
+ <%# <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                   
+                    
+                    <p class="lead mb-5">褒めることを軸に倫理を学び、マネジメントが勉強できるサービスです</p>
+                    <h3><div class="index-font">index</div></h3>
+                    <div class="social-icons">
+                        <a class="index" href="#experience">褒め方辞典とは？</a>
+                        <a class="index" href="#education">「褒める」でマネジメント？</a>    
+                        <a class="index" href="#skills">褒めると倫理について</a>
+                        <a class="index" href="#interests">本サービスがおすすめの方</a>
+                        <a class="index" href="#awards">サービスの使い方について</a>
+                        </div>
+                     </div>
+            </section> %>
+
+
+
 <main class="main">
   <div class="inner">
     <div class="prototype__wrapper">
       <p class="prototype__hedding">
-        <%# <%= "プロトタイプのタイトル"%> 
         <br><%= @definition.title%></br>
       </p>
       <p class="prototype__hedding">
@@ -58,10 +65,11 @@
           <%= link_to "編集する", edit_definition_path(@definition.id), class: :prototype__btn %>
           <%= link_to "削除する", definition_path(@definition), class: :prototype__btn, method: :delete %>
         <% end %>
+        </div>
       <%# // 画像があれば表示する %>
 
       <%# // answerゾーン %>
-    </div>
+   
       <div class="prototype__comments">
        <% if user_signed_in? %> 
          <% if current_user %>
@@ -105,6 +113,7 @@
       </div>
     </div>
 
+<%# <%= javascript_include_tag "reviews.js" %>  
        
       <%# <div class="prototype__comments">
         <% if user_signed_in? %>
@@ -133,6 +142,13 @@
         <%# </ul> %>
       <%# </div> %>
     <%# </div> %>
+      <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
   </div>
 </main>
 </body>

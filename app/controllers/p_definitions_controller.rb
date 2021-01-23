@@ -1,10 +1,12 @@
 class PDefinitionsController < ApplicationController
+  before_action :authenticate_user!, only: [:show]
   def new
     @p_definition = PDefinition.new
   end
 
   def index
     @todays_date = Date.today
+    @definitions = Definition.all
     @p_definitions = PDefinition.all
   end
 
@@ -19,6 +21,8 @@ class PDefinitionsController < ApplicationController
 
   def show
     @p_definition = PDefinition.find(params[:id])
+    @p_review = PReview.new
+    @review = Review.new
     @p_answer = PAnswer.new
     @p_answers = @p_definition.p_answers.includes(:user)
     @comment = Comment.new
