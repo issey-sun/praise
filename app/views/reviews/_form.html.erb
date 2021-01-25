@@ -9,6 +9,9 @@
     </ul>
   </div>
 <% end %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <%= link_to "褒め方辞典", root_path, class: :prototype__user %>
+    </nav> 
 <div class="rating-box mt-3">
 <%= form_with model: review, url: definition_reviews_path(definition), local: true do |f| %>
   <div class="main-rating">
@@ -27,7 +30,7 @@
   <%= f.submit "保存", class: "button mt-3" %>
   <%= link_to "→他のレビューを見る", definition_reviews_path(definition), class: "button light ml-3 mt-3" %>
 <% end %>
-  <br><%= link_to "< 一覧に戻る >", root_path %></br>
+  <br><%= link_to "< 一覧に戻る >", root_path(anchor:"definitions") %></br>
 </div>
 
 <%= javascript_pack_tag "reviews" %>
