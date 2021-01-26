@@ -1,6 +1,15 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+before_action :set_search
 
+  def set_search
+    @definitions = Definition.all
+    # @definition_key = Definition.ransack(params[:q])
+    # @search_definitions = @definition_key.result(distinct: true).page(params[:page])
+    @users = User.all
+    @user_key = User.ransack(params[:q])
+    @search_feeds = @user_key.result(distinct: true).page(params[:page])
+  end
 
   private
   def configure_permitted_parameters

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
 
-  resources :users, only: :show
+  resources :users
 
   resources :p_definitions do
     resources :p_answers do

@@ -62,6 +62,11 @@
                   定義
              <% end %>
             <li class="header__li">
+             <%= link_to users_path , class: "orange" do %>
+                <i class="fas fa-list"></i>                   
+                ユーザー一覧
+             <% end %>
+            <li class="header__li">
               <%= link_to destroy_user_session_path, method: :delete , class: "orange" do %>
                 <i class="fas fa-sign-out-alt"></i>
                 ログアウト

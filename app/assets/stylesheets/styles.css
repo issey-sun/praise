@@ -10826,3 +10826,82 @@ font-weight: bold;
   font-size: 25px;
 }
 
+
+/* ユーザー一覧 */
+.user-image-window {
+  border-radius: 10px;
+}
+.user_card_content {
+  position: relative;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  align-items: auto;
+  overflow: hidden;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+  .card-user {
+    width: 200px;
+    height: 200px;
+    border-radius: 6px;
+    border-top-style: ridge;
+    border-left-style: ridge;
+    overflow: hidden;
+    position: relative;
+    margin: 1.5rem;
+    background: #fffcf4;
+    border-radius :8px;
+    box-shadow :0px 0px 5px silver;
+    padding: 0.5em 0.5em 0.5em 2em;
+    line-height: 1.5;
+    padding: 0.5em 0;
+  }
+
+
+    
+     .additional-user {
+      position: absolute;
+      width: 150px;
+      height: 100%;
+      transition: width 0.4s;
+      overflow: hidden;
+      z-index: 2;
+     }
+
+      .info-user {
+        width: 10px;
+        height: 100%;
+        position: relative;
+        float: left;
+        text-align: center;
+      }
+
+        .more-info {
+        padding-top: 5px;
+        text-align: center;
+        list-style: none;
+        }
+      
+    
+     .general {
+      width: 130px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      padding-top: 20px;
+      text-align: center;
+      }
+
+      
+
+      .item-center {
+        text-align: center;
+      }
+
+      .font-xs {
+        font-size: 11px;
+      }

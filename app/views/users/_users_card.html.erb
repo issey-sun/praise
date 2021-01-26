@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <%= link_to "褒め方辞典", root_path, class: :prototype__user %>
+</nav> 
+
+<div class="card-user">
+  <div class="additional-user">
+    <div class="more-info">
+      <ul>
+        <!--ajax：フォローボタンのアイコンを変更-->
+        <li id='follow-button_<%= feed.id %>'>
+           <%# <%= render partial: '/relationships/follow_button', locals: {feed: feed} %>   
+         </li> 
+        <li><%= link_to feed.nickname, user_path(feed), class: "link_to_text_bk font-xs" %><br> <hr></li>
+        <%# <li><%= image_tag user.image %>
+        <li><span class="font-xs">投稿した件数</span> <%= feed.definitions.count  %></li>
+        <li><span class="font-xs">いいね総数</span>　 <%= feed.likes.count %></li>
+        <%# <li><span class="font-xs">フォロー数</span>　 <%= feed.follower.count %>
+        <!--ajax：ユーザ一覧ページにて、フォロワー人数を変更--> 
+        <li id="add-follower_<%= feed.id %>">
+          <%# <%= render partial: "/relationships/add-follower", locals: {feed: feed} %> 
+        </li>
+        <%= link_to "詳細ページへ", user_path(feed), class: "font-xs" %>
+      </ul>
+    </div>
+  </div>
+</div>
+
