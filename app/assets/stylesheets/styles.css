@@ -4381,8 +4381,9 @@ input[type=button].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: #ffffe0;
+  border-bottom: 1px solid #f0e68c;
+  width: 50vw;
 }
 .card-header:first-child {
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
@@ -4391,7 +4392,7 @@ input[type=button].btn-block {
 .card-footer {
   padding: 0.75rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.03);
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-top: 1px solid ;
 }
 .card-footer:last-child {
   border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
@@ -10381,6 +10382,11 @@ section.resume-section .resume-section-content {
   list-style: none;
 }
 
+.comments_neo-lists{
+  list-style-type: square;
+  padding-bottom: 5px;
+}
+
 .comment_user{
   font-size: 16px;
   color: #999;
@@ -10730,6 +10736,22 @@ a.btn--pink.btn--border-ridge {
   font-size: 20px;
 }
 
+.card-content{
+  width: 300vw;
+}
+
+.standard-evaluation{
+  border: solid;
+  border-radius: 8px;
+  padding: 20px 20px;
+  margin: 20px;
+  width: 50vw;
+}
+
+
+
+
+
 /* /////////// definitions*/
 .star-rating {
   position: relative;
@@ -10752,7 +10774,7 @@ a.btn--pink.btn--border-ridge {
   display: flex;
 }
 .average-score-display {
-  font-size: 16px;
+  font-size: 13.5px;
 }
 
 /* ////// application*/
@@ -10796,8 +10818,6 @@ font-weight: bold;
   background: linear-gradient(transparent 0%, #ffff00 0%);
 }
 
-
-
 .next {
   font-size: 20px;
 }
@@ -10805,3 +10825,4 @@ font-weight: bold;
 .part {
   font-size: 25px;
 }
+

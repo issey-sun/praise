@@ -58,7 +58,7 @@
           <%= form_with(model: [@definition, @answer], local: true) do |f| %>
             <div class="field">
               <%= f.label :answer, "回答" %><br />
-              <%= f.text_field :answer %>
+              <%= f.text_field :answer, size: "50x10" %>
             </div>
             <div class="actions">
               <%= f.submit "送信する", class: :form__btn  %>
@@ -70,7 +70,7 @@
               <%= " 回答一覧 "%>
               <% if @answers %>
                 <% @answers.each do |answer| %>
-              <li class="comments_list">
+              <li class="comments_neo-lists">
                 <%= link_to answer.user.nickname, "/users/#{answer.user_id}", class: :comment_user %>
                 <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #FFFFEE; color: #000000;"><%= answer.answer %></div> 
                 

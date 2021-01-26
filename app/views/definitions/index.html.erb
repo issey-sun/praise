@@ -136,7 +136,7 @@
                             <div class="flex-grow-1">
                                 <p><span class="marker">賞賛の言葉</span>が相手のやる気を向上させる心理現象が<span class="marker">科学的に立証</span>されています。</p>
                                 <p>これは1925年にアメリカの発達心理学者エリザベス・ハーロック博士が、行った実験により証明されたエンハンシング効果です。</p>
-                                <p>本サービスでも褒める」ことを軸にマネジメントをすることを推奨しております。</p>
+                                <p>本サービスでも「褒める」ことを軸にマネジメントをすることを推奨しております。</p>
                             </div>
                         </div>
                     </div>
@@ -169,7 +169,7 @@
                     <h2 class="mb-5">「褒め方辞典」がおすすめの方 </h2>
                     <div class="flex-grow-1">
                         <br><h3 class="mb-0">相手のモチベーションを上げる、誰かを大切にしたい人</h3></br>
-                        <p>マネジメントに関係する<span class="marker">会社員</span>として働く人や、人間関係を円滑にしたい人</p>
+                        <p>マネジメントに関係する（マネジメントをする、される）<span class="marker">会社員</span>として働く人や、人間関係を円滑にしたい人</p>
                         <p>仕事外での<span class="marker">コミュニケーション</span>の仕方を勉強したい人</p>
                         <p>大切な誰かを<span class="marker">言動</span>により、もっと大切にしたい人　などなど</p>
                     </div>
@@ -206,7 +206,7 @@
 
                         <br><div style="padding: 10px; margin-bottom: 10px; border: 1px solid #b84c00;"><big><b><p><span style="background-color:#FFCACA;">3 投票</span></p></b></big>
                         <nobr><p>2 で回答いただいた内容の中で、ご自身が思う一番いい言動を選び<span class="marker">「いいね」</span>をしてください。</p></br></nobr></div>
-                        <nobr><br><p><span class="marker2">票の量に関係なしに、それぞれの定義と回答を尊重し、自らの学び</span>としましょう。</p></br></nobr>
+                        <nobr><br><p><span class="marker2">投票の量に関係なしに、それぞれの定義と回答を尊重し、自らの学び</span>としましょう。</p></br></nobr>
 
                
 
@@ -241,6 +241,7 @@
                         <li class="comments_list neo-body">
                         <p><i class="far fa-laugh-squint"></i>定義者名<i class="fas fa-angle-double-right"></i>&nbsp;&nbsp;
                         <%= link_to definition.user.nickname, "/users/#{definition.user_id}", class: :comment_user %></p></br>
+                        <br><p><i class="fas fa-ghost"></i> 定義をレビューしてみよう（評価基準の詳細は「レビューを書く」で確認</p>
                                 <div class="card mb-6">
                                     <div class="card-content">
                                     <div class="content">
@@ -265,6 +266,7 @@
                                     <% end %>
                                     </footer>
                                 </div>
+                        <p><i class="fas fa-check-square"></i> 定義の詳細の確認 & 回答は定義タイトルをクリック</p>
                         <div style="padding: 10px; margin-bottom: 10px; border: 2px solid #bd5d38; background-color: #fff0f5">                        
                         <%=link_to definition.title, definition_path(definition.id) %>
                         </div>
@@ -286,7 +288,7 @@
                         <li class="comments_list neo-body">
                         <p><i class="far fa-laugh-squint"></i>定義者名<i class="fas fa-angle-double-right"></i>&nbsp;&nbsp;
                         <%= link_to p_definition.user.nickname, "/users/#{p_definition.user_id}", class: :comment_user %></p></br>
-                        <br><p><i class="fas fa-ghost"></i> 定義のレビューをしてみよう</p>
+                        <br><p><i class="fas fa-ghost"></i> 定義をレビューしてみよう（評価基準の詳細は「レビューを書く」で確認）</p>
                         <div class="card mb-6">
                             <div class="card-content">
                             <div class="content">
@@ -311,7 +313,7 @@
                             <% end %>
                             </footer>
                             </div>
-                            <p><i class="fas fa-check-square"></i> 回答は定義タイトルをクリック</p>
+                            <p><i class="fas fa-check-square"></i> 定義の詳細の確認 & 回答は定義タイトルをクリック</p>
                         <div style="padding: 10px; margin-bottom: 10px; border: 2px solid #ffffff; background-color: #fff0f5">                        
                         <%=link_to p_definition.title, p_definition_path(p_definition.id) %>
                         </div>

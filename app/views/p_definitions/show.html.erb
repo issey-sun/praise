@@ -68,7 +68,7 @@
           <%= form_with(model: [@p_definition, @p_answer], local: true) do |f| %>
             <div class="field">
               <%= f.label :answer, "回答" %><br />
-              <%= f.text_field :answer %>
+              <%= f.text_field :answer, size: "50x10" %>
             </div>
             <div class="actions">
               <%= f.submit "送信する", class: :form__btn  %>
@@ -79,7 +79,7 @@
               <%= " 回答一覧 "%>
               <% if @p_answers %>
                 <% @p_answers.each do |p_answer| %>
-              <li class="comments_list">
+              <li class="comments_neo-lists">
                 <%= link_to p_answer.user.nickname, "/users/#{p_answer.user_id}", class: :comment_user %>
                 <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #FFFFEE; color: #000000;"><%= p_answer.answer %></div>
 
@@ -103,33 +103,13 @@
       </div>
     </div>
 
-      <%# <div class="prototype__comments">
-        <% if user_signed_in? %>
-         <%# <% if current_user %> 
-          <%# <%= form_with(model: [@definition, @comment], local: true) do |f| %> 
-            <%# <div class="field"> %>
-              <%# <%= f.label :text, "コメント" %> 
-               <%# <%= f.text_field :text %>  
-             <%# </div>  %>
-            <%# <div class="actions"> %>
-              <%# <%= f.submit "送信する", class: :form__btn %>  
-            <%# </div> %>
-           <%# <% end %>   
-        <%# <% end %> 
-        <%# <ul class="comments_lists">  %>
-              <%# <%= " コメントのテキスト "%>  
-              <%# <% if @comments %>  
-                <%# <% @comments.each do |comment| %>  
-                <%# <%= link_to comment.user.name, "/users/#{comment.user_id}", class: :comment_user %> 
-                 <%# <%= comment.text %>         
-                <%# <% end %>
-              <%# <% end %> 
-            <%# <% end %> 
-
-            <%# </li> %>
-        <%# </ul> %>
-      <%# </div> %>
-    <%# </div> %>
+ <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
   </div>
 </main>
 </body>
