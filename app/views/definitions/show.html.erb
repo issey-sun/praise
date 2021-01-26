@@ -33,24 +33,6 @@
             </div>
         </nav>
 
- <%# <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                   
-                    
-                    <p class="lead mb-5">褒めることを軸に倫理を学び、マネジメントが勉強できるサービスです</p>
-                    <h3><div class="index-font">index</div></h3>
-                    <div class="social-icons">
-                        <a class="index" href="#experience">褒め方辞典とは？</a>
-                        <a class="index" href="#education">「褒める」でマネジメント？</a>    
-                        <a class="index" href="#skills">褒めると倫理について</a>
-                        <a class="index" href="#interests">本サービスがおすすめの方</a>
-                        <a class="index" href="#awards">サービスの使い方について</a>
-                        </div>
-                     </div>
-            </section> %>
-
-
-
 <main class="main">
   <div class="inner">
     <div class="prototype__wrapper">
@@ -76,7 +58,7 @@
           <%= form_with(model: [@definition, @answer], local: true) do |f| %>
             <div class="field">
               <%= f.label :answer, "回答" %><br />
-              <%= f.text_field :answer %>
+              <%= f.text_field :answer, size: "50x10" %>
             </div>
             <div class="actions">
               <%= f.submit "送信する", class: :form__btn  %>
@@ -88,7 +70,7 @@
               <%= " 回答一覧 "%>
               <% if @answers %>
                 <% @answers.each do |answer| %>
-              <li class="comments_list">
+              <li class="comments_neo-lists">
                 <%= link_to answer.user.nickname, "/users/#{answer.user_id}", class: :comment_user %>
                 <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #FFFFEE; color: #000000;"><%= answer.answer %></div> 
                 

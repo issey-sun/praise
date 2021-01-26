@@ -1,7 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <%= link_to "褒め方辞典", root_path, class: :prototype__user %>
+</nav>  
+     <div class="inner">
+      <div class="nav">
+
 <div class="main">
+  <div class="container">
+  
+
   <div class="inner">
     <div class="form__wrapper">
-      <h2 class="page-heading">ユーザー新規登録</h2>
+    
+      <h2 class="page-heading">ユーザー新規登録 <i class="fas fa-ghost"></i></h2>
+            
 
         <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
@@ -22,7 +33,7 @@
 
         <div class="field">
           <%= f.label :nickname, "ユーザー名" %><br />
-          <%= f.text_field :nickname %>
+          <%= f.text_field :nickname, class: :form__text %>
         </div>
 
        <div class="field">
@@ -64,4 +75,8 @@
       <% end %>
     </div>
   </div>
+    </div>
 </div>
+
+ 
+

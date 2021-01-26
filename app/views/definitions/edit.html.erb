@@ -1,8 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <%= link_to "褒め方辞典", root_path, class: :prototype__user %>
+</nav> 
+<main class="main">
+  <div class="inner">
 
-<h3>編集ページ</h3>
+<h3>定義した内容を編集しよう</h3></br>
 <%= form_with model: @definition, local: true do |f| %>
-<%= f.text_area :title, placeholder:"メモのタイトルを入力する" %>
-<%= f.text_area :body, placeholder:"メモのタイトルを入力する" %>
-<%= f.submit "更新する" %>
+<h5>Ⅰ. 定義するタイトルを入力してください</h5>
+<%= f.text_area :title, size: "70x2", placeholder:"例）成長のために部下を叱っていいものか？" %></br>
+<br><h5>Ⅱ. 定義の詳細を入力してください</h5>
+<%= f.text_area :body, size: "70x5", placeholder:"例) 何度同じこと言ってもわかってくれない部下がいます。社外関係者を含めての会議での資料を用意するよう指示をしても、指示通り行動してくれません。予め印刷方法は教えているのですが、資料の部数には余裕がなく、ホッチキスは右留め、白黒印刷の資料（社内ではカラー印刷はルール）で用意してしまいます。仕事への態度も悪く、叱って部下のやる気を出させたいのですが、叱って良いものでしょうか？" %></br>
+<br><%= f.submit "定義する" %></br>
 <% end %>
-<%= link_to '定義一覧へ', root_path %>
+<br><%= link_to "< 一覧に戻る >", root_path(anchor:"definitions") %></br>
+
+</div>
+</main>
