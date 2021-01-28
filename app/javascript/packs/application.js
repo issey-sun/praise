@@ -8,7 +8,19 @@ require("@rails/activestorage").start()
 // require("../../assets/javascript/packs/node_modules/channels")
 require("channels")
 require("../packs/reviews")
-require("../packs/scripts");
+require("../packs/scripts")
+require('jquery');
+
+// import 'bootstrap';
+// import '../stylesheets/application';
+
+// $(function(){
+//   alert('jQuery is installed.')
+// });
+
+import Rails from '@rails/ujs'
+Rails.start();
+global.$ = require('jquery');
 
 
 

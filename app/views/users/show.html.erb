@@ -1,11 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <%= link_to "褒め方辞典", root_path, class: :prototype__user %>
+</nav> 
 <div class="main">
   <div class="inner">
     <div class="user__wrapper">
       <h2 class="page-heading">
-        <%= @user.nickname + "さんの情報"%>
+         <strong class="marker-harf"><%= @user.nickname + "さんの情報"%></strong>
       </h2>
       <table class="table">
         <tbody>
+              <% if @search_feeds.any? %>
           <tr>
             <th class="table__col1">名前</th>
             <td class="table__col2"><%= @user.nickname %></td>
@@ -19,6 +23,10 @@
             <td class="table__col2"><%= @user.position %></td>
          </tr>
          <tr>
+            <th class="table__col1">アバター画像</th>
+            <td class="table__col2"><%= image_tag @user.image.variant(resize: '300x400') %></td>
+         </tr>
+         <tr>
             <th class="table__col1">性別</th>
             <td class="table__col2"><%= @sex.name %></td>
          </tr>
@@ -26,10 +34,26 @@
             <th class="table__col1">年齢</th>
             <td class="table__col2"><%= @age %></td>
          </tr>
+         <tr>
+            <th class="table__col1">定義した件数</th>
+            <td class="table__col2"><%= @definitions.count%></td>
+         </tr>
+         <tr>
+            <th class="table__col1">いいね総数</th>
+            <td class="table__col2"><%= @likes.count%></td>
+         </tr>
+         <tr>
+            <th class="table__col1">フォロー数</th>
+            <td class="table__col2"><%= @user.follower.count %></td>
+         </tr>
+         <tr>
+            <th class="table__col1">フォロワー数</th>
+            <td class="table__col2"><%= @user.followed.count%></td>
+         </tr>
+         <% end %>
         </tbody>
       </table>
-     <%= link_to "<トップページへ戻る>", root_path, class: :user_info %></br>
-
+     <i class="fas fa-undo-alt"></i> <%= link_to "トップページへ戻る", root_path, class: :user_info %></br>
     </div>
   </div>
 </div>
