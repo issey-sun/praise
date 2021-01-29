@@ -18,12 +18,12 @@ class UsersController < ApplicationController
 
   def edit; end
 
-  def destroy
-    @map.destroy
-    respond_to do |format|
-      format.html { redirect_to maps_url, notice: 'アカウントが無事削除されました！' }
-    end
-  end
+  # def destroy
+  #   @map.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to maps_url, notice: 'アカウントが無事削除されました！' }
+  #   end
+  # end
 
   def move_to_index
     unless user_signed_in?

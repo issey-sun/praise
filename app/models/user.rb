@@ -62,6 +62,10 @@ def following?(user_id)
   following_user.include?(user_id)
 end
 
+# 最近作成されたユーザーから表示
+default_scope -> { order(created_at: :desc) }
+
+
  # # 簡単ログイン：ユーザー作成
 #  def self.guest
 #   image_path = open('./db/fixtures/guest/user.png')

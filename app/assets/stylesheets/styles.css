@@ -4329,6 +4329,22 @@ input[type=button].btn-block {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
+
+.card2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.map_card_container {
+  position: relative;
+  flex-wrap: wrap;
+  overflow: hidden;
+  
+}
+
+
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;
@@ -10848,7 +10864,7 @@ font-weight: bold;
 
   .card-user {
     width: 200px;
-    height: 400px;
+    height: 450px;
     border-radius: 6px;
     border-top-style: ridge;
     border-left-style: ridge;
@@ -10906,6 +10922,10 @@ font-weight: bold;
         text-align: center;
       }
 
+      .item-center2 {
+        text-align: left;
+      }
+
       .font-xs {
         font-size: 11px;
       }
@@ -10913,6 +10933,9 @@ font-weight: bold;
       .textORG{
         margin: 20px
       }
+
+
+    
 
 
 

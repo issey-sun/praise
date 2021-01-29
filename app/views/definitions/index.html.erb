@@ -233,9 +233,34 @@
                         <br><a class="index part" href="#ethics"><i class="fas fa-leaf"></i> 倫理パート</a></br>
                         <a class="index part" href="#praises"><i class="fas fa-apple-alt"></i> 褒めるパート</a>    
                         </div>
-                     </div>
-                   
-                </div>
+
+
+                        <br><br>
+                         <div class="first-contents">
+                            <div class="item-center2">
+                                <% if @search_definitions.any? %>
+                               <%= render "/shared/search_form/definition_title_cont" %>
+
+                                <% if @definition_key.title_cont %>
+                                <br><div class="map_card_container" id="items">
+                                  <%= render partial: "definitions/definitions_segment", collection: @search_definitions, as: "post" %>
+                                </div>             
+                                <% end %>
+
+                                <% else %>
+                                    <%= render'/shared/search_form/definition_title_cont' %>
+                                    <br><br>
+                                        <h3>該当する検索検索結果がありませんでした<i class="far fa-sad-cry"></i></h3>
+                                    <br><br>
+                                </div>
+
+                                <% end %>
+                            </div>
+                         </div>
+
+             </div>
+
+
             </section>
              <!-- 倫理パート-->
             <section class="resume-section" id="ethics">
