@@ -11008,5 +11008,8 @@ font-weight: bold;
 
       .pan {
         margin-left: 20px;
-        filter: drop-shadow(0 0 50px #00a7ff);
+      }
+
+      .flash-padding {
+        margin-left: 20px; 
       }
