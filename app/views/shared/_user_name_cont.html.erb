@@ -1,0 +1,7 @@
+<%# 検索フォーム：ユーザー名　%>
+<%= search_form_for @user_key do |f| %>
+  <%= f.search_field :nickname_cont, placeholder: 'ユーザー名...', class: 'form-layout' %>
+  <%= button_tag type: 'submit' , class: "btn-mini slide-bg" do %>
+    <i class="fas fa-search"></i>
+  <% end %>
+<% end %>

@@ -1,0 +1,21 @@
+<main>
+  <div class="first-content">
+    <h2 class="textORG"><strong class="marker-harf">USER LISTS</strong></h2><br>
+    <div class="item-center">
+      <% if @search_feeds.any? %>
+        <%= render "/shared/user_name_cont" %>
+          <div class="user_card_content" id="items">
+            <%= render partial: 'users/users_card', collection: @search_feeds, as: "feed" %>
+          </div>
+        <%= link_to_next_page @search_feeds, 'つづきを見る', remote: true, class: "btn filled", id: 'more_link' %>
+      <% else %>
+        <div>
+          <%= render '/shared/user_name_cont' %>
+          <br><br>
+            <h3>まだユーザーが登録されていません！</h3>
+          <br><br>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>

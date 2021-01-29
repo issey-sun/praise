@@ -46,7 +46,12 @@
           <%= f.text_area :position, class: :form__text %>
         </div>
 
-        <div class='input-birth-wrap'>
+        <div class="field">
+          <%= f.label :image, "アバター画像" %><br />
+          <%= f.file_field :image %>
+        </div>
+
+        <br><div class='input-birth-wrap'>
           <%= f.label :birth_day, "誕生日" %><br />
             <%= raw sprintf(
                   f.date_select(

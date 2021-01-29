@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
 
-  resources :users, only: :show
+  resources :users 
 
   resources :p_definitions do
     resources :p_answers do
@@ -17,5 +17,8 @@ Rails.application.routes.draw do
   end
   resources :p_reviews, only: [:index, :create, :new]
 end
+
+post 'follow/:id' => 'relationships#follow', as: 'follow' # フォローする
+post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # フォロー外す
 
 end

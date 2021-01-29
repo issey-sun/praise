@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <%= link_to "褒め方辞典", root_path, class: :prototype__user %>
 </nav> 
+<% breadcrumb :edit %>
 <main class="main">
   <div class="inner">
 
@@ -12,7 +13,7 @@
 <%= f.text_area :body, size: "70x5", placeholder:"例) 何度同じこと言ってもわかってくれない部下がいます。社外関係者を含めての会議での資料を用意するよう指示をしても、指示通り行動してくれません。予め印刷方法は教えているのですが、資料の部数には余裕がなく、ホッチキスは右留め、白黒印刷の資料（社内ではカラー印刷はルール）で用意してしまいます。仕事への態度も悪く、叱って部下のやる気を出させたいのですが、叱って良いものでしょうか？" %></br>
 <br><%= f.submit "定義する" %></br>
 <% end %>
-<br><%= link_to "< 一覧に戻る >", root_path(anchor:"definitions") %></br>
+<br><i class="fas fa-undo-alt"></i> <%= link_to " 一覧に戻る ", root_path(anchor:"definitions") %></br>
 
 </div>
 </main>
