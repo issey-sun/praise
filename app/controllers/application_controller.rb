@@ -5,8 +5,11 @@ class ApplicationController < ActionController::Base
 
   def set_search
     @definitions = Definition.all
+    @p_definitions = PDefinition.all
     @likes = Like.all
     @definition_key = Definition.ransack(params[:q])
+    @p_definition_key = PDefinition.ransack(params[:q])
+    @p_search_definitions = @p_definition_key.result(distinct: true).page(params[:page])
     @search_definitions = @definition_key.result(distinct: true).page(params[:page])
     @users = User.all
     @user_key = User.ransack(params[:q])

@@ -1,4 +1,4 @@
-<%= search_form_for @definition_key, url: root_path(anchor:"definitions") do |f| %>
+<%= search_form_for [@definition_key, @p_definition_key], url: root_path(anchor:"definitions") do |f| %>
   <%= f.search_field :title_cont, placeholder: '定義名...', class: 'form-layout' %>
   <%= button_tag type: 'submit' , class: "btn-mini slide-bg" do %> 
     <i class="fas fa-search"></i> 

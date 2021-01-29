@@ -230,21 +230,25 @@
                     <h2 class="mb-5">定義一覧</h2>
                     <p class="lead mb-5">シチュエーションを定義し、その定義に対して回答してみましょう。</p>
                     <div class="social-icons">
-                        <br><a class="index part" href="#ethics"><i class="fas fa-leaf"></i> 倫理パート</a></br>
-                        <a class="index part" href="#praises"><i class="fas fa-apple-alt"></i> 褒めるパート</a>    
+                        <br><a class="index part" href="#ethics"><span class="marker-harf2"><i class="fas fa-leaf"></i> 倫理パート</span></a></br>
+                        <a class="index part" href="#praises"><span class="marker-harf3"><i class="fas fa-apple-alt"></i> 褒めるパート</span></a>    
                         </div>
 
 
                         <br><br>
                          <div class="first-contents">
                             <div class="item-center2">
-                                <% if @search_definitions.any? %>
+                                <% if @search_definitions || @p_search_definitions.any? %>
                                <%= render "/shared/search_form/definition_title_cont" %>
 
-                                <% if @definition_key.title_cont %>
+                                <% if @definition_key.title_cont || @p_definition_key.title_cont %>
                                 <br><div class="map_card_container" id="items">
-                                  <%= render partial: "definitions/definitions_segment", collection: @search_definitions, as: "post" %>
+                                  <%= render partial: "definitions/definitions_segment", collection:  @search_definitions, as: "post" %>
+                                </div> 
+                                 <div class="map_card_container" id="items">
+                                  <%= render partial: "definitions/p_definitions_segment", collection: @p_search_definitions , as: "post" %>
                                 </div>             
+            
                                 <% end %>
 
                                 <% else %>
@@ -316,7 +320,7 @@
                         <br>
                         <% @p_definitions.each do |p_definition| %>
                         <ul>
-                        <li class="comments_list neo-body">
+                        <li class="comments_list p_neo-body">
                         <p><i class="far fa-laugh-squint"></i>定義者名<i class="fas fa-angle-double-right"></i>&nbsp;&nbsp;
                         <%= link_to p_definition.user.nickname, "/users/#{p_definition.user_id}", class: :comment_user %></p></br>
                         <br><p><i class="fas fa-ghost"></i> 定義をレビューしてみよう（評価基準の詳細は「レビューを書く」で確認）</p>
@@ -343,9 +347,9 @@
                              レビューを書く
                             <% end %>
                             </footer>
-                            </div>
+                            </div>           
                             <p><i class="fas fa-check-square"></i> 定義の詳細の確認 & 回答は定義タイトルをクリック</p>
-                        <div style="padding: 10px; margin-bottom: 10px; border: 2px solid #ffffff; background-color: #fff0f5">                        
+                        <div style="padding: 10px; margin-bottom: 10px; border: 2px solid #FFCC33; background-color: #FFFFCC">                        
                         <%=link_to p_definition.title, p_definition_path(p_definition.id) %>
                         </div>
                         <%= @todays_date%>

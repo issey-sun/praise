@@ -10816,6 +10816,12 @@ a.btn--pink.btn--border-ridge {
   border-left: solid 10px #db7093;
 }
 
+.p_neo-body {
+  padding: 50px 50px;
+  border: solid 2px #ecec05;
+  border-left: solid 10px #ecd505;
+}
+
 .button-card-footer-item {
   background: linear-gradient(transparent 0%, #FFD5EC 0%);
 font-weight: bold; 
@@ -10837,6 +10843,15 @@ font-weight: bold;
 .marker-harf {
   background: linear-gradient(transparent 60%, #fcb848 0%);
 }
+
+.marker-harf2 {
+  background: linear-gradient(transparent 60%, #ffc0cb 0%);
+}
+
+.marker-harf3 {
+  background: linear-gradient(transparent 60%, #ffff00 0%);
+}
+
 
 .next {
   font-size: 20px;
