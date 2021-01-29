@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :p_reviews, dependent: :destroy
   has_one_attached :image
+  belongs_to_active_hash :sex
 
 
   # フォロー取得

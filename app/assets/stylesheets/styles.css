@@ -4401,6 +4401,14 @@ input[type=button].btn-block {
   border-bottom: 1px solid #f0e68c;
   width: 50vw;
 }
+
+.card-header2 {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #ffffe0;
+  border-bottom: 1px solid #f0e68c;
+}
+
 .card-header:first-child {
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
 }
@@ -10852,6 +10860,10 @@ font-weight: bold;
   background: linear-gradient(transparent 60%, #ffff00 0%);
 }
 
+.marker-harf4 {
+  background: linear-gradient(transparent 60%, #e99426 0%);
+}
+
 
 .next {
   font-size: 20px;
@@ -10989,4 +11001,12 @@ font-weight: bold;
         left: 0;
         margin: auto;
         text-align: center;
+      }
+
+
+
+
+      .pan {
+        margin-left: 20px;
+        filter: drop-shadow(0 0 50px #00a7ff);
       }

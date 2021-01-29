@@ -62,3 +62,4 @@ gem 'pry-rails'
 gem 'parallel'
 gem 'ransack'
 gem 'kaminari'
+gem "gretel"

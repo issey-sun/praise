@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @sex = Sex.find(params[:id])
     @definitions =  @user.definitions
     
     @birth_day = @user.birth_day.year
