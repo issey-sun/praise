@@ -11,6 +11,7 @@
   </head>
 
   <body>
+  <div class="flash-padding">
       <br><% if flash[:notice] %>
         <div class="notification is-info">
           <p class="notice"><%= notice %></p>
@@ -20,6 +21,7 @@
           <p class="alert"><%= alert %></p>
           <div>
           <% end %>
+          </div>
 
     <div class="pan"><%= breadcrumbs separator: " &rsaquo; " %></div><br><br>  
     <%= yield %>

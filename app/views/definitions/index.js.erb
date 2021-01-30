@@ -1,0 +1,6 @@
+$("#items").append("<%= j(
+  render partial: 'definitions/index', collection: @search_definitions, as: "post") %>");
+
+$("#more_link").replaceWith("<%= j(
+  link_to_next_page(@search_definitions, 'つづきを見る', remote: true, class: "btn filled", id: 'more_link')) %>");
+

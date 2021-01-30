@@ -65,7 +65,8 @@ end
 
 # 最近作成されたユーザーから表示
 default_scope -> { order(created_at: :desc) }
-
+# 一度に表示する投稿数
+paginates_per 8
 
  # # 簡単ログイン：ユーザー作成
 #  def self.guest

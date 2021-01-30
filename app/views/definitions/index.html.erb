@@ -307,10 +307,14 @@
                         <%=link_to definition.title, definition_path(definition.id) %>
                         </div>
                         <%= @todays_date%>
-                        </br>
+                      
                         </li>
-                        </ul>
+                        </ul>   
                    <% end %>
+                   
+        <%= paginate @definitions %>         
+
+
                 </div>
             </section>
              <!-- 褒めるパート-->
@@ -359,7 +363,7 @@
                         </ul>
                         </br>
                    <% end %>
-                    
+                   <%= paginate @p_definitions %>
                    
                 </div>
             </section>
