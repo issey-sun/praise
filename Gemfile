@@ -63,3 +63,4 @@ gem 'parallel'
 gem 'ransack'
 gem 'kaminari'
 gem "gretel"
+gem 'kaminari-bootstrap'

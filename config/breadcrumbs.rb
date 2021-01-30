@@ -62,6 +62,16 @@ link "ユーザー詳細", user_path
 parent :user_lists
 end
 
+crumb :registration do
+link "新規登録", new_user_registration_path
+parent :root
+end
+
+crumb :session do
+link "ログイン", new_user_session_path
+parent :root
+end
+
 
 
 

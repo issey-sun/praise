@@ -11005,7 +11005,7 @@ font-weight: bold;
 
 
 
-
+/* パンくずリスト & フラッシュメッセージ */
       .pan {
         margin-left: 20px;
       }
@@ -11013,3 +11013,18 @@ font-weight: bold;
       .flash-padding {
         margin-left: 20px; 
       }
+
+/* kaminari */
+
+.p-top {
+  min-width: 960px;
+  text-align: center;
+  font-size: 16px;
+
+}
+
+.pagination {
+  font-size: 20px;
+  margin-left: 25px;
+  letter-spacing: 0.1em
+}
