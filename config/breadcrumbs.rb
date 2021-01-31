@@ -72,6 +72,11 @@ link "ログイン", new_user_session_path
 parent :root
 end
 
+crumb :notifications do
+link "通知", notifications_path
+parent :root
+end
+  
 
 
 
