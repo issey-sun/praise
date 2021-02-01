@@ -1,7 +1,7 @@
 module NotificationsHelper
-  def unchecked_notifications
-    @notifications = current_user.passive_notifications.where(checked: false)
-  end
+  # def unchecked_notifications
+  #   @notifications = current_user.passive_notifications.where(checked: false)
+  # end
   
   def notification_form(notification)
     #通知を送ってきたユーザーを取得
@@ -24,20 +24,23 @@ module NotificationsHelper
     when 'p_like'
       tag.a(notification.visitor.nickname, href: user_path(@visitor)) + 'が' + tag.a('あなたの投稿', href: p_definition_path(notification.p_answer_id)) + 'にいいねしました'
 
+
+
     when 'answer' then
       #コメントの内容と投稿のタイトルを取得      
       @answer = Answer.find_by(id: @visitor_answer)
       @answer_content =@answer.answer
       @definition_title =@answer.definition.title
-      tag.a(@visitor.nickname, href: user_path(@visitor)) + 'が' + tag.a("#{@definition_title}", href: definition_path(notification.definition_id)) + 'にコメントしました'
-    end
+      tag.a(@visitor.nickname, href: user_path(@visitor)) + 'が' + tag.a("#{@definition_title}", href: definition_path(notification.definition_id)) + 'に回答しました'
+    
 
-  # when 'p_answer' then
-  #   #コメントの内容と投稿のタイトルを取得      
-  #   @p_answer = PAnswer.find_by(id: @visitor_p_answer)
-  #   @p_answer_content =@p_answer.p_answer
-  #   @p_definition_title =@p_answer.p_definition.title
-  #   tag.a(@visitor.name, href: user_path(@visitor)) + 'が' + tag.a("#{@p_definition_title}", href: p_definition_path(notification.p_definition_id)) + 'にコメントしました'
-  # end
+    when 'p_answer' then
+      #コメントの内容と投稿のタイトルを取得      
+      @p_answer = PAnswer.find_by(id: @visitor_p_answer)
+      @p_answer_content =@p_answer.answer
+     @p_definition_title =@p_answer.p_definition.title
+      tag.a(@visitor.nickname, href: user_path(@visitor)) + 'が' + tag.a("#{@p_definition_title}", href: p_definition_path(notification.p_definition_id)) + 'に回答しました'
+  
   end
-   end
+ end
+end

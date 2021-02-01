@@ -22,21 +22,13 @@
 
          <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
                   <%= link_to "褒め方辞典", root_path, class: :prototype__user %></br>
-                  
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">全体の通知</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">個人の通知</a></li>
-               </ul>
-            </div>
+                            
         </nav>
 
 <main class="main">
   <div class="inner">
 
-<h3 class="text-center">通知</h3>
+<h3 class="text-center">通知（個人）</h3>
     <%= link_to "通知削除", notification_path(@notifications), method: :delete ,class: "fas fa-trash" %>
     <% if @notifications.exists? %>
     <div class="notification-index">

@@ -31,7 +31,6 @@ default_scope -> { order(created_at: :desc) }
 # 一度に表示する投稿数
 paginates_per 3
 
-
 #notification
   def create_notification_answer!(current_user, answer_id)
     #同じ投稿にコメントしているユーザーに通知を送る。（current_userと投稿ユーザーのぞく）
