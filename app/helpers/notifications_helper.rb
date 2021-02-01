@@ -14,15 +14,15 @@ module NotificationsHelper
     # notification.actionがfollowかlikeかcommentかで処理を変える
     case notification.action
     
-    when 'follow'
+    when 'follow' then
       #aタグで通知を作成したユーザーshowのリンクを作成
       tag.a(notification.visitor.nickname, href: user_path(@visitor)) + 'があなたをフォローしました'
     
-    when 'like'
-      tag.a(notification.visitor.nickname, href: user_path(@visitor)) + 'が' + tag.a('あなたの投稿', href: definition_path(notification.answer_id)) + 'にいいねしました'
+    when 'like' then
+      tag.a(notification.visitor.nickname, href: user_path(@visitor)) + 'が' + tag.a('あなたの投稿', href: definition_path(notification)) + 'にいいねしました'
    
-    when 'p_like'
-      tag.a(notification.visitor.nickname, href: user_path(@visitor)) + 'が' + tag.a('あなたの投稿', href: p_definition_path(notification.p_answer_id)) + 'にいいねしました'
+    when 'p_like' then
+      tag.a(notification.visitor.nickname, href: user_path(@visitor)) + 'が' + tag.a('あなたの投稿', href: p_definition_path(notification)) + 'にいいねしました'
 
 
 
