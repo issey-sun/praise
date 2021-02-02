@@ -56,6 +56,24 @@ def save_notification_p_answer!(current_user, p_answer_id, visited_id)
     notification.save if notification.valid?
 end
 
+# notification review
+def create_notification_p_review!(current_user)
+  temp = Notification.where(["visitor_id = ? and visited_id = ? and p_definition_id = ? and action = ? ",
+                                current_user.id, user_id, id, 'p_review'])
+  if temp.blank?
+    notification = current_user.active_notifications.new(
+      p_definition_id: id,
+      visited_id: user_id,
+      action: 'p_review'
+    )
+
+    if notification.visitor_id == notification.visited_id
+       notification.checked = true
+    end
+    notification.save if notification.valid?
+  end
+end
+
 
 
 end

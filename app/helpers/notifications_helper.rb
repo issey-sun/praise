@@ -9,11 +9,8 @@ module NotificationsHelper
     #コメントの内容を通知に表示する
     @answer = nil
     @p_answer = nil
-    # @review = nil
     @visitor_answer = notification.answer_id
     @visitor_p_answer = notification.p_answer_id
-    # @visitor_review = notification.definition_id
-    # notification.actionがfollowかlikeかcommentかで処理を変える
     case notification.action
     
     when 'follow' then
@@ -28,6 +25,9 @@ module NotificationsHelper
 
     when 'review' then
       tag.a(notification.visitor.nickname, href: user_path(@visitor)) + 'が' + tag.a('あなたの投稿', href: new_definition_review_path(notification)) + 'を評価しました'
+
+    when 'p_review' then
+      tag.a(notification.visitor.nickname, href: user_path(@visitor)) + 'が' + tag.a('あなたの投稿', href: new_p_definition_p_review_path(notification)) + 'を評価しました'
 
 
     when 'answer' then

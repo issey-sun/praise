@@ -10,6 +10,7 @@ def create
   @p_review = PReview.new(p_review_params)
   @p_review.user_id = current_user.id
   @p_definition = PDefinition.find(params[:p_definition_id])
+  @p_definition.create_notification_p_review!(current_user)
   if @p_review.save
     redirect_to p_definition_p_reviews_path(@p_review.p_definition)
   else
