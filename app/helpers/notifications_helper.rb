@@ -1,7 +1,7 @@
 module NotificationsHelper
-  # def unchecked_notifications
-  #   @notifications = current_user.passive_notifications.where(checked: false)
-  # end
+  def unchecked_notifications
+    @notifications = current_user.passive_notifications.where(checked: false)
+  end
   
   def notification_form(notification)
     #通知を送ってきたユーザーを取得
@@ -9,8 +9,10 @@ module NotificationsHelper
     #コメントの内容を通知に表示する
     @answer = nil
     @p_answer = nil
+    # @review = nil
     @visitor_answer = notification.answer_id
     @visitor_p_answer = notification.p_answer_id
+    # @visitor_review = notification.definition_id
     # notification.actionがfollowかlikeかcommentかで処理を変える
     case notification.action
     
@@ -24,6 +26,8 @@ module NotificationsHelper
     when 'p_like' then
       tag.a(notification.visitor.nickname, href: user_path(@visitor)) + 'が' + tag.a('あなたの投稿', href: p_definition_path(notification)) + 'にいいねしました'
 
+    when 'review' then
+      tag.a(notification.visitor.nickname, href: user_path(@visitor)) + 'が' + tag.a('あなたの投稿', href: new_definition_review_path(notification)) + 'を評価しました'
 
 
     when 'answer' then
