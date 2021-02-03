@@ -69,6 +69,11 @@
                 ユーザー一覧
              <% end %>
             <li class="header__li">
+             <%=link_to notifications_path , class: "orange" do %>
+                <i class="fas fa-bell"></i>                   
+                通知
+             <% end %>
+            <li class="header__li">
               <%= link_to destroy_user_session_path, method: :delete , class: "orange" do %>
                 <i class="fas fa-sign-out-alt"></i>
                 ログアウト
@@ -88,8 +93,6 @@
        </div>
      </div>
       </li>
-
-
                 </ul>
             </div>
         </nav>
@@ -312,7 +315,7 @@
                         </ul>   
                    <% end %>
                    
-        <%= paginate @definitions %>         
+        <%= paginate  @definitions %>         
 
 
                 </div>

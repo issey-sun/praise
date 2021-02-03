@@ -64,3 +64,4 @@ gem 'ransack'
 gem 'kaminari'
 gem "gretel"
 gem 'kaminari-bootstrap'
+gem "aws-sdk-s3", require: false

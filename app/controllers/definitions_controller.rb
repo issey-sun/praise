@@ -6,10 +6,8 @@ class DefinitionsController < ApplicationController
 
   def index
     @todays_date = Date.today
-    # @definitions = Definition.all
-    @definitions = Definition.all.page(params[:page]).per(3).order('updated_at DESC')
-    @p_definitions = PDefinition.all.page(params[:page]).per(3).order('updated_at DESC')
-    # @p_definitions = PDefinition.all
+    @definitions = Definition.all.page(params[:page])
+    @p_definitions = PDefinition.all.page(params[:page])
   end
 
   def create

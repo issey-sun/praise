@@ -25,6 +25,10 @@ class User < ApplicationRecord
   has_many :following_user, through: :follower, source: :followed # 自分がフォローしている人
   has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
 
+  #通知
+  has_many :active_notifications, foreign_key:"visitor_id", class_name: "Notification", dependent: :destroy
+  has_many :passive_notifications, foreign_key:"visited_id", class_name: "Notification", dependent: :destroy
+
   
   validates :nickname, presence: true
   validates :occupation, presence: true
@@ -78,5 +82,20 @@ paginates_per 8
 #     user.confirmed_at = Time.zone.now # Confirmable を使用している場合は必要
 #   end
 # end
+
+
+#notification フォロー
+def create_notification_follow!(current_user)
+  #すでに通知が作成されているか確認
+  temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ",current_user.id, id, 'follow'])
+  if temp.blank?
+    notification = current_user.active_notifications.new(
+      visited_id: id,
+      action: 'follow'
+    )
+    notification.save if notification.valid?
+  end
+end
+
 
 end

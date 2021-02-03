@@ -1,0 +1,15 @@
+
+<div class="notification-view">
+  <%= notification_form(notification) %><span class="moderate-font"><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span>
+  <br>
+  <% if !@answer.nil? && !@p_answer.nil? %>
+    <p class="notification-comment"><%= @answer %></p>
+    <p class="notification-comment"><%= @p_answer %></p>
+  <% end %>
+   <% if unchecked_notifications.any? %>
+    <i class="fa fa-circle notification-circle"></i>
+  <% end %>
+
+</div>
+
+ 

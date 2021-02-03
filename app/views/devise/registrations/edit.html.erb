@@ -1,43 +1,107 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <%= link_to "褒め方辞典", root_path, class: :prototype__user %>
+</nav>  
+<% breadcrumb :registration_edit %>
+     <div class="inner">
+      <div class="nav">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="main">
+  <div class="container">
+  
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  <div class="inner">
+    <div class="form__wrapper">
+    
+      <h2 class="page-heading">ユーザー情報編集 <i class="fas fa-ghost"></i></h2>
+            
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+        <%= form_with model: @user, url: edit_user_registration_path, local: true do |f| %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード再入力" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :nickname, "ユーザー名" %><br />
+          <%= f.text_field :nickname, class: :form__text %>
+        </div>
+
+       <div class="field">
+          <%= f.label :occupation, "所属" %><br />
+          <%= f.text_area :occupation, class: :form__text %>
+        </div>
+
+        <div class="field">
+          <%= f.label :position, "役職" %><br />
+          <%= f.text_area :position, class: :form__text %>
+        </div>
+
+        <div class="field">
+          <%= f.label :image, "アバター画像" %><br />
+          <%= f.file_field :image %>
+        </div>
+
+        <br><div class='input-birth-wrap'>
+          <%= f.label :birth_day, "誕生日" %><br />
+            <%= raw sprintf(
+                  f.date_select(
+                    :birth_day,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 1930,
+                    end_year: (Time.now.year - 5),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+        </div>
+
+      <div class="form">
+        <div class="weight-bold-text">
+          性別
+        </div>
+        <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+        </div>
+
+
+        <br> <div class="actions">
+    <%= f.submit "更新する", class: :form__btn %>
   </div>
 <% end %>
+     </div> 
+   </div> 
+     </div> 
+</div>
 
+
+      <%# <% end %> 
+        <div>※アカウントを削除したい方</div>
+              <%= button_to registration_path(current_user),
+                data: { confirm: "本当に、消去してもよろしいですか？" }, method: :delete, class: :form__btn do %>
+                  <i class="fas fa-user-slash"></i>
+                <span class="default">削除</span>
+              <% end %>
+      </div>
+
+
+ 
+<%# 
+
+  
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<i class="fas fa-undo-alt"></i><%= link_to "ユーザー詳細画面に戻る", :back %>

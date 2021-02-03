@@ -10,6 +10,7 @@ def create
   @review = Review.new(review_params)
   @review.user_id = current_user.id
   @definition = Definition.find(params[:definition_id])
+  @definition.create_notification_review!(current_user)
   if @review.save
     redirect_to definition_reviews_path(@review.definition)
   else

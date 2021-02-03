@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_015916) do
+ActiveRecord::Schema.define(version: 2021_01_30_090401) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -77,6 +77,25 @@ ActiveRecord::Schema.define(version: 2021_01_27_015916) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["answer_id"], name: "index_likes_on_answer_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "visitor_id", null: false
+    t.bigint "visited_id", null: false
+    t.bigint "definition_id"
+    t.bigint "p_definition_id"
+    t.bigint "answer_id"
+    t.bigint "p_answer_id"
+    t.string "action", null: false
+    t.boolean "checked", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["answer_id"], name: "index_notifications_on_answer_id"
+    t.index ["definition_id"], name: "index_notifications_on_definition_id"
+    t.index ["p_answer_id"], name: "index_notifications_on_p_answer_id"
+    t.index ["p_definition_id"], name: "index_notifications_on_p_definition_id"
+    t.index ["visited_id"], name: "index_notifications_on_visited_id"
+    t.index ["visitor_id"], name: "index_notifications_on_visitor_id"
   end
 
   create_table "p_answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -146,6 +165,9 @@ ActiveRecord::Schema.define(version: 2021_01_27_015916) do
     t.text "position", null: false
     t.date "birth_day", null: false
     t.integer "sex_id", null: false
+    t.string "twitter"
+    t.string "facebook"
+    t.string "instagram"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -166,6 +188,12 @@ ActiveRecord::Schema.define(version: 2021_01_27_015916) do
   add_foreign_key "definitions", "users"
   add_foreign_key "likes", "answers"
   add_foreign_key "likes", "users"
+  add_foreign_key "notifications", "answers"
+  add_foreign_key "notifications", "definitions"
+  add_foreign_key "notifications", "p_answers"
+  add_foreign_key "notifications", "p_definitions"
+  add_foreign_key "notifications", "users", column: "visited_id"
+  add_foreign_key "notifications", "users", column: "visitor_id"
   add_foreign_key "p_answers", "p_definitions"
   add_foreign_key "p_answers", "users"
   add_foreign_key "p_definitions", "users"
