@@ -76,6 +76,11 @@ crumb :notifications do
 link "通知", notifications_path
 parent :root
 end
+
+crumb :registration_edit do
+  link "ユーザー情報編集", edit_user_registration_path
+  parent :user_lists
+end
   
 
 

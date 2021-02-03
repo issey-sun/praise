@@ -11028,3 +11028,34 @@ font-weight: bold;
   margin-left: 25px;
   letter-spacing: 0.1em
 }
+
+/* アイコン */
+/*Twitter*/
+.fa-twitter{color:#1da1f2}
+/*Facebook*/
+.fa-facebook-square{color:#3b5998;}
+/*instagram*/
+.fa-instagram{color:#e1306c;}
+
+.icon {
+  padding: 2.5% 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 40%;
+  font-size: 20px;
+  position: relative; top: 0; 
+  padding-left: 20px;
+  }
+
+.twitter-icon {
+  font-size: 30px;
+  margin-left: 5px;
+}
+
+.icon-share {
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+
