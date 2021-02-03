@@ -58,26 +58,26 @@ Rspec(systemspec)
 
 # 機能一覧
 ・ログイン機能(devise)
-・画像投稿(aws-fog/carrierwave/image_processing)
-・投稿、編集、削除、新規作成(scaffold)
-・いいね機能(ajax処理)
-・フォロー機能(ajax処理)
-・評価機能(ajax処理)
-・検索機能(ransack)
-・ページネーション機能(kaminari)
-・通知機能
-・SNSへのリンク共有機能
-・パンくず機能(gretel)
-・Amazon S3機能
+・画像投稿(aws-fog/carrierwave/image_processing)</br>
+・投稿、編集、削除、新規作成(scaffold)</br>
+・いいね機能(ajax処理)</br>
+・フォロー機能(ajax処理)</br>
+・評価機能(ajax処理)</br>
+・検索機能(ransack)</br>
+・ページネーション機能(kaminari)</br>
+・通知機能</br>
+・SNSへのリンク共有機能</br>
+・パンくず機能(gretel)</br>
+・Amazon S3機能</br>
 
-（今後すぐに実装　仮）
-・管理者権限
-・グラフ機能
-・ダイレクトメッセージ機能
-・テストデータ投入(faker)
-・テスト(Rspec)
-・ruby構文規約チェックツール(rubocop)
-・rails構文規約チェックツール(rubocop-rails)
+（今後すぐに実装　仮）</br>
+・管理者権限</br>
+・グラフ機能</br>
+・ダイレクトメッセージ機能</br>
+・テストデータ投入(faker)</br>
+・テスト(Rspec)</br>
+・ruby構文規約チェックツール(rubocop)</br>
+・rails構文規約チェックツール(rubocop-rails)</br>
 
 
 # インフラ構成
