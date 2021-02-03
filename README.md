@@ -1,6 +1,6 @@
 # README
 # （実際のアプリの写真）
-![sss.red-miso.work]https://gyazo.com/9055a72eeb2545ac29397b37f5e6d569
+![sss.red-miso.work](https://user-images.githubusercontent.com/76093901/106721323-dd831a80-6647-11eb-9c99-e2eeb17346ad.png)
 
 # 本番環境
 （URL）https://praise-homekata.herokuapp.com/
