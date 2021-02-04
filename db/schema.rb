@@ -165,9 +165,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_090401) do
     t.text "position", null: false
     t.date "birth_day", null: false
     t.integer "sex_id", null: false
-    t.string "twitter"
-    t.string "facebook"
-    t.string "instagram"
+    t.boolean "admin", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

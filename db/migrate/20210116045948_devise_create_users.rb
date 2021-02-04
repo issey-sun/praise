@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.text    :position,             null: false
       t.date    :birth_day,            null: false
       t.integer :sex_id,               null: false
+      t.boolean :admin,                default: false
 
       ## Recoverable
       t.string   :reset_password_token

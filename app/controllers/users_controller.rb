@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: %i[destroy edit update]
+  before_action :blocking_edit_user, only: %i[destroy edit update]
 
   def index
     @users = User.all
@@ -44,6 +45,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:nickname, :occupation, :position, :birth_day, :sex_id, :image)
   end
+
+  def blocking_edit_user
+    redirect_to root_path, alert: "不正な操作です" unless (@user == current_user) || current_user.admin?
+  end
+
 
 end
 

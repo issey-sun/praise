@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
 
+
   def create
     @definition = Definition.find(params[:definition_id])
     @answer = Answer.new(answer_params)
