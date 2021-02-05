@@ -95,7 +95,7 @@
                  <% end %>
                  <%= p_answer.p_likes.count %>
 
-                <%= @todays_date%>      
+                <%= "(#{time_ago_in_words(p_answer.created_at)}前)" %>      
               <% end %>
           <% end %>
         <% end %>

@@ -87,7 +87,7 @@
                  <% end %>
                  <%= answer.likes.count %>
                 
-                <%= @todays_date%>      
+                <%= "(#{time_ago_in_words(answer.created_at)}前)" %>      
               <% end %>
           <% end %>
         <% end %>
@@ -96,35 +96,6 @@
       </div>
     </div>
 
-<%# <%= javascript_include_tag "reviews.js" %>  
-       
-      <%# <div class="prototype__comments">
-        <% if user_signed_in? %>
-         <%# <% if current_user %> 
-          <%# <%= form_with(model: [@definition, @comment], local: true) do |f| %> 
-            <%# <div class="field"> %>
-              <%# <%= f.label :text, "コメント" %> 
-               <%# <%= f.text_field :text %>  
-             <%# </div>  %>
-            <%# <div class="actions"> %>
-              <%# <%= f.submit "送信する", class: :form__btn %>  
-            <%# </div> %>
-           <%# <% end %>   
-        <%# <% end %> 
-        <%# <ul class="comments_lists">  %>
-              <%# <%= " コメントのテキスト "%>  
-              <%# <% if @comments %>  
-                <%# <% @comments.each do |comment| %>  
-                <%# <%= link_to comment.user.name, "/users/#{comment.user_id}", class: :comment_user %> 
-                 <%# <%= comment.text %>         
-                <%# <% end %>
-              <%# <% end %> 
-            <%# <% end %> 
-
-            <%# </li> %>
-        <%# </ul> %>
-      <%# </div> %>
-    <%# </div> %>
       <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>

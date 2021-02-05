@@ -309,7 +309,7 @@
                         <div style="padding: 10px; margin-bottom: 10px; border: 2px solid #bd5d38; background-color: #fff0f5">                        
                         <%=link_to definition.title, definition_path(definition.id) %>
                         </div>
-                        <%= @todays_date%>
+                        <%= "#{time_ago_in_words(definition.created_at)}前" %>
                       
                         </li>
                         </ul>   
@@ -360,7 +360,7 @@
                         <div style="padding: 10px; margin-bottom: 10px; border: 2px solid #FFCC33; background-color: #FFFFCC">                        
                         <%=link_to p_definition.title, p_definition_path(p_definition.id) %>
                         </div>
-                        <%= @todays_date%>
+                        <%= "#{time_ago_in_words(p_definition.created_at)}前" %>
                         </br>
                         </li>
                         </ul>
