@@ -11058,4 +11058,13 @@ font-weight: bold;
   font-size: 15px;
 }
 
+/* グラフ */
+.graph {
+  padding: 0 0 0 100px;
+}
+
+.word {
+  line-height: 0.5em;
+  color: #c0c0c0;
+}
 

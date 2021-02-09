@@ -49,10 +49,10 @@
     <div class="prototype__wrapper">
       <p class="prototype__hedding">
         <%# <%= "プロトタイプのタイトル"%> 
-        <br><%= @p_definition.title%></br>
+        <br><%= safe_join(@p_definition.title.split("\n"),tag(:br)) %></br>
       </p>
       <p class="prototype__hedding">
-      <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px double #333333; border-radius: 10px; background-color: #FFCC99; color: #000000;"><%= @p_definition.body %></div>
+      <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px double #333333; border-radius: 10px; background-color: #FFCC99; color: #000000;"><%= safe_join(@p_definition.body.split("\n"),tag(:br)) %></div>
       </p>
         <div class="prototype__manage">
         <% if user_signed_in? && current_user.id == @p_definition.user_id %>
@@ -69,20 +69,29 @@
           <%= form_with(model: [@p_definition, @p_answer], local: true) do |f| %>
             <div class="field">
               <%= f.label :answer, "回答" %><br />
-              <%= f.text_field :answer, size: "50x10" %>
+              <%= f.text_area :answer, size: "50x2" %>
             </div>
             <div class="actions">
               <%= f.submit "送信する", class: :form__btn  %>
             </div>
           <% end %> 
         <% end %>
+
+        <br>
+        <% @p_rank.each do |p_rank| %>
+        いいね数が最も多い回答
+          <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #fff0f5; color: #000000;"><%= safe_join(p_rank.answer.split("\n"),tag(:br)) %></div>
+          <i class="fas fa-heart"></i><%= p_rank.p_likes.count %>
+        <% end %>
+        </br></br></br>
+
         <ul class="comments_lists">
               <%= " 回答一覧 "%>
               <% if @p_answers %>
                 <% @p_answers.each do |p_answer| %>
               <li class="comments_neo-lists">
                 <%= link_to p_answer.user.nickname, "/users/#{p_answer.user_id}", class: :comment_user %>
-                <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #FFFFEE; color: #000000;"><%= p_answer.answer %></div>
+                <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #FFFFEE; color: #000000;"><%= safe_join(p_answer.answer.split("\n"),tag(:br)) %></div>
 
                 <% if current_user.already_p_liked?(p_answer) %>
                   <%= link_to p_definition_p_answer_p_likes_path(@p_definition,p_answer), method: :delete do %>

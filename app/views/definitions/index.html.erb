@@ -133,7 +133,14 @@
                     </div>
                     <p class="image-sizes"><i class="fas fa-child"></i><i class="fas fa-child"></i><i class="fas fa-child"></i></p>
                     <%= link_to "next => 「褒める」でマネジメント？", "#education", class: "next" %>
+                 <br><br><br>
+                 <div class="word">
+                <p>※マネジメント・・・経営上の効果を最適化するため、人や資源、リスクなどを管理する手法のこと</p>
+                <p>※問題定義・・・解決する課題を明確に設定すること</p>
+                <p>※倫理・・・人として守るべき行いや道のこと</p>
                 </div>
+                </div>
+               
             </section>
             <hr class="m-0" />
             <!-- 褒めることでマネジメントとは？-->
@@ -160,11 +167,11 @@
             <!-- 褒めると倫理について-->
             <section class="resume-section" id="skills">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">褒めると倫理について </h2>
+                    <h2 class="mb-5">「褒める」と「倫理」について </h2>
                     <div class="flex-grow-1">
-                        <br><h3 class="mb-0">褒める行為の前提に倫理がある</h3></br>
-                        <p>人としての<span class="marker">倫理</span>が伴って初めて、褒めるという行為が成り立ちます。</p>
-                        <p>また褒める相手との<span class="marker">関係性</span>や、相手からの<span class="marker">印象</span>により褒める効果が変動します。</p>
+                        <br><h3 class="mb-0">「褒める」行為の前提に倫理がある</h3></br>
+                        <p>人としての<span class="marker">「倫理」</span>が伴って初めて、「褒める」という行為が成り立ちます。</p>
+                        <p>また、褒める相手との<span class="marker">関係性</span>や、相手からの<span class="marker">印象</span>により褒める効果が変動します。</p>
                         <p>なので、褒める前提となる倫理についてもマネジメントにおいては重要になります。</p>                    
                     </div>
                     <p class="image-size"><i class="fas fa-hands-helping"></i></p>                    
@@ -307,7 +314,7 @@
                                 </div>
                         <p><i class="fas fa-check-square"></i> 定義の詳細の確認 & 回答は定義タイトルをクリック</p>
                         <div style="padding: 10px; margin-bottom: 10px; border: 2px solid #bd5d38; background-color: #fff0f5">                        
-                        <%=link_to definition.title, definition_path(definition.id) %>
+                        <%=link_to safe_join(definition.title.split("\n"),tag(:br)), definition_path(definition.id) %>
                         </div>
                         <%= "#{time_ago_in_words(definition.created_at)}前" %>
                       
@@ -358,7 +365,7 @@
                             </div>           
                             <p><i class="fas fa-check-square"></i> 定義の詳細の確認 & 回答は定義タイトルをクリック</p>
                         <div style="padding: 10px; margin-bottom: 10px; border: 2px solid #FFCC33; background-color: #FFFFCC">                        
-                        <%=link_to p_definition.title, p_definition_path(p_definition.id) %>
+                        <%=link_to safe_join(p_definition.title.split("\n"),tag(:br)), p_definition_path(p_definition.id) %>
                         </div>
                         <%= "#{time_ago_in_words(p_definition.created_at)}前" %>
                         </br>
@@ -367,7 +374,6 @@
                         </br>
                    <% end %>
                    <%= paginate @p_definitions %>
-                   
                 </div>
             </section>
             <% end %>

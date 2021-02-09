@@ -7,7 +7,6 @@ class DefinitionsController < ApplicationController
   end
 
   def index
-    @todays_date = Date.today
     @definitions = Definition.all.page(params[:page])
     @p_definitions = PDefinition.all.page(params[:page])
   end
@@ -29,7 +28,7 @@ class DefinitionsController < ApplicationController
     @answers = @definition.answers.includes(:user)
     @comment = Comment.new
     @comments = @definition.comments.includes(:user)
-    @todays_date = Date.today
+    @rank = Answer.find(Like.where(definition_id: params[:id]).group(:answer_id).order('count(answer_id) desc').limit(1).pluck(:answer_id))
   end
 
   def edit

@@ -40,7 +40,15 @@
             <% end %>
           </tbody>
         </table>
-  <br><i class="fas fa-undo-alt"></i> <%= link_to " 一覧に戻る ", root_path(anchor:"definitions") %></br>
+
+</br><div class="graph">
+<label class="graph-label">レビューと評価者 (レビュー総数 : <%= @reviews.count %>)</label>
+       <%= column_chart Review.joins(:user).group(:nickname, :sex_id).sum(:score), width: "400px", height: "300px", xtitle: "評価者", ytitle: "評価" %>
+       <%= pie_chart Review.joins(:user).group(:sex_id).count %>
+</div>
+
+
+        <br><i class="fas fa-undo-alt"></i> <%= link_to " 一覧に戻る ", root_path(anchor:"definitions") %></br>
       </div>
     </div>
   </div>

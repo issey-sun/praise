@@ -25,6 +25,7 @@ def new
   @todays_date = Date.today
 end
 
+
   private
   def review_params
     params.require(:review).permit(:definition_id, :score, :content)
