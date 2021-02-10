@@ -14,7 +14,7 @@ class DefinitionsController < ApplicationController
   def create
     @definition = Definition.new(definition_params)
     if @definition.save
-      redirect_to root_path
+      redirect_to root_path(anchor:"ethics")
     else
       render :new
     end

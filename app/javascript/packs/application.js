@@ -10,6 +10,7 @@ require("chartkick")
 require("chart.js")
 require("../packs/reviews")
 require("../packs/scripts")
+require("../packs/displays")
 require('jquery')
 
 

@@ -14,7 +14,7 @@ class PDefinitionsController < ApplicationController
   def create
     @p_definition = PDefinition.new(p_definition_params)
     if @p_definition.save
-      redirect_to root_path
+      redirect_to root_path(anchor:"praises")
     else
       render :new
     end

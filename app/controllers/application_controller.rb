@@ -20,4 +20,15 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :occupation, :position, :birth_day, :sex_id, :image])
   end
+
+  def after_inactive_sign_up_path_for(resource)
+    root_path(anchor:"definitions")                  
+  end
+
+  def after_sign_in_path_for(resource)
+    root_path(anchor:"definitions") 
+  end
+
+  
+
 end
