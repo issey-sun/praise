@@ -65,5 +65,6 @@ gem 'kaminari'
 gem "gretel"
 gem 'kaminari-bootstrap'
 gem "aws-sdk-s3", require: false
-gem 'rails_admin', '~> 2.0.0.beta'
+gem 'rails_admin'
+# , '~> 2.0.0.beta'
 gem 'cancancan'
