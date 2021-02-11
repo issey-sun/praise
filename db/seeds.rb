@@ -13,9 +13,9 @@ user = User.create!(email: "admin@example.jp",
   nickname:  "管理者",
   occupation: "管理者",
   position: "管理者",
-  birth_day: "2021-10-10",
+  birth_day: "2000-10-10",
   sex_id: "2",
   admin: true)
 
   # user.image.attach(io: File.open(Rails.root.join("app/assets/images/download-2.jpg")), filename: "download-2.jpg")
-  # user.image.attach(io: File.open("app/assets/images/homekatajiten.png"), filename: "homekatajiten.png", content_type: "image/png")
+  user.image.attach(io: File.open("app/assets/images/homekatajiten.png"), filename: "homekatajiten.png", content_type: "image/png")
