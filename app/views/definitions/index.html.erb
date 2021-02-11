@@ -141,7 +141,7 @@
                     <%= link_to "next => 「褒める」でマネジメント？", "#education", class: "next" %>
                  <br><br><br>
 
-<br><p>※単語についてはカーソルを合わせることで、意味をご確認いただけます。</p>
+<p>※単語についてはカーソルを合わせることで、意味をご確認いただけます。</p>
   <div class="btn-rotation" >
     <span>マネジメントとは</span>
     <span>経営上の効果を最適化するため、人や資源、リスクなどを管理する手法のこと</span>
@@ -217,33 +217,64 @@
                     <div class="flex-grow-1">
                         <br><h3 class="mb-0">流れは、定義 → 回答 →「いいね」</h3></br>
                         <nobr><p>倫理の在り方や褒め方を皆さまで定義し、<span class="marker">自らが思う最良のものを投票</span>で決めていただきます。</p></nobr>
-                        <nobr><p>倫理パートと褒め方パートがあり、それぞれ定義・回答してみましょう。</p></nobr>
+                        <nobr><p>倫理パートと褒めるパートがあり、それぞれ定義・回答してみましょう。</p></nobr>
 
-                        
-                        <br><div style="padding: 10px; margin-bottom: 10px; border: 1px solid #b84c00;"><big><b><p><span style="background-color:#FFCACA;">1 定義</span></p></b></big></nobr>
+                        <br><nobr><b><p class="part_introduction"><i class="fas fa-leaf"></i> 倫理パート・・・・倫理的な視点における人としての言動の是非について</p></b></nobr></br>
+                        <nobr><b><p class="part_introduction"><i class="fas fa-apple-alt"></i> 褒めるパート・・・褒め方について</p></b></nobr></br>
+
+
+
+                    <dialog id="dialog" class="dialog_style" >
+                        <br><big><b><p><span style="background-color:#FFCACA;">1 定義</span></p></b></big></nobr>
                         <nobr><p>皆さんご自身で「こんなときどうする？」の各シチュエーションについて定義します。</p></nobr>
                         <nobr><p>定義はタイトルと定義詳細の2つを入力し、「定義」ボタンをクリックしてください。</p></br></nobr>
                         <nobr><p>倫理パート　　例①（タイトル）成長のために部下は叱っていいものか？</p></nobr>
                               <p>　　　　　　　　　　　（詳細）同じこと言ってもわかってくれない部下がいます。・・叱って良いでしょうか？</p></br></nobr>
-                        <nobr><p>褒めるパート　例②（タイトル）毎日気持ちの良い挨拶ができている部下にどう褒めたら良いのか？</p></br></nobr>
-                              <p>　　　　　　　　　　　（詳細）毎日気持ちよく挨拶してくれる新入社員がおり、よりモチベーションを上げる褒め方はありますか？</p></br></nobr></div>
+                              <p>褒めるパート　例②（タイトル）毎日気持ちの良い挨拶ができている部下にどう褒めたら良いのか？</p></br></nobr>
+                              <p>　　　　　　　　　　　（詳細）毎日気持ちよく挨拶してくれる新入社員がおり、よりモチベーションを上げる褒め方はありますか？</p></br></nobr>
 
-                        <br><div style="padding: 10px; margin-bottom: 10px; border: 1px solid #b84c00;"><big><b><p><span style="background-color:#FFCACA;">2 回答</span></p></b></big></nobr>
+                    <button class="form__btn" onclick="document.getElementById('dialog').close();">
+                        OK
+                    </button>
+                    </dialog>
+                            <br>
+                    <button class="form__btn" onclick="document.getElementById('dialog').show();">
+                    1 「定義」について説明
+                    </button><br>
+
+                    <dialog id="dialog2" class="dialog_style2" >
+                        <br><big><b><p><span style="background-color:#FFCACA;">2 回答</span></p></b></big></nobr>
                         <nobr><p>1 で定義したシチュエーションで、「ご自身だったらどうするか？」を回答します。</p></br></nobr>
                         <nobr><p>倫理パート　　　　例①（回答）ケースバイケース、人にもよりけりで一概に良いとは言えません。</p></nobr>
                         <nobr><p>　　　　　　　　　　　　　　　成長を思って部下を叱るのであれは説得よりも納得できる叱り方・・・</p></br></nobr>
                         <nobr><p>褒めるパート　　　例②（回答）〜さんが挨拶することで私も今日も元気に仕事ができます。</p></nobr>
-                        <nobr><p>　　　　　　　　　　　　　　　今日もとっても嬉しいです。</p></br></nobr></div>
+                        <nobr><p>　　　　　　　　　　　　　　　今日もとっても嬉しいです。</p></br></nobr>
+                    <button class="form__btn2" onclick="document.getElementById('dialog2').close();">
+                        OK
+                    </button>
+                    </dialog>
+                            <br>
+                    <button class="form__btn2" onclick="document.getElementById('dialog2').show();">
+                    2 「回答」について説明
+                    </button></br>
 
 
-                        <br><div style="padding: 10px; margin-bottom: 10px; border: 1px solid #b84c00;"><big><b><p><span style="background-color:#FFCACA;">3 投票</span></p></b></big>
-                        <nobr><p>2 で回答いただいた内容の中で、ご自身が思う一番いい言動を選び<span class="marker">「いいね」</span>をしてください。</p></br></nobr></div>
-                        <nobr><br><p><span class="marker2">投票の量に関係なしに、それぞれの定義と回答を尊重し、自らの学び</span>としましょう。</p></br></nobr>
+                    <dialog id="dialog3" class="dialog_style2" >
+                        <br><big><b><p><span style="background-color:#FFCACA;">3 投票</span></p></b></big>
+                        <nobr><p>2 で回答いただいた内容の中で、ご自身が思う一番いい言動を選び<span class="marker">「いいね」</span>をしてください。</p></br></nobr>
+                        <nobr><p><span class="marker2">投票の量に関係なしに、それぞれの定義と回答を尊重し、自らの学び</span>としましょう。</p></nobr>
+                    <button class="form__btn3" onclick="document.getElementById('dialog3').close();">
+                        OK
+                    </button>
+                    </dialog>
+                            <br>
+                    <button class="form__btn3" onclick="document.getElementById('dialog3').show();">
+                    3 「投票」について説明
+                    </button></br></br>
 
-               
 
 
-                    </div>
+
              <i class="fas fa-user-plus"></i><%= link_to " 新規登録して褒め方辞典を使って見よう", new_user_registration_path, class: "next" %></br>
              <br><i class="fas fa-sign-in-alt"></i><%= link_to " 登録済みの方はこちらからログイン", new_user_session_path, class: "next" %>
             </div>
@@ -296,7 +327,7 @@
             <section class="resume-section" id="ethics">
                 <div class="resume-section-content">
                     <h2 class="mb-5"><i class="fas fa-leaf"></i> 倫理パート</h2>
-                    <%= link_to "倫理のシチュエーションについて定義", new_definition_path, class: :nav__btn %></br>
+                    <%= link_to "＋「倫理」のシチュエーションについて定義", new_definition_path, class: :nav__btn %></br>
                     <% @definitions.each do |definition| %>
                         <br><ul>
                         <li class="comments_list neo-body">
@@ -346,7 +377,7 @@
             <section class="resume-section" id="praises">
                 <div class="resume-section-content">
                     <h2 class="mb-5 neo-line"><i class="fas fa-apple-alt"></i> 褒めるパート</h2>
-                    <%= link_to "褒めるのシチュエーションについて定義", new_p_definition_path, class: :nav__btn %></br>
+                    <%= link_to "＋「褒める」のシチュエーションについて定義", new_p_definition_path, class: :nav__btn %></br>
                         <br>
                         <% @p_definitions.each do |p_definition| %>
                         <ul>

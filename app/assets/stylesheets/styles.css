@@ -10287,6 +10287,69 @@ section.resume-section .resume-section-content {
   cursor: pointer;
 }
 
+.form__btn2{
+  background: #f3887a;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f3887a), to(#feb645));
+  background: -webkit-linear-gradient(top, #f3887a 0%, #feb645 100%);
+  background: linear-gradient(to bottom, #f3887a 0%, #feb645 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#f3887a), to(#feb645));
+  background: -webkit-linear-gradient(bottom, #f3887a 0%, #feb645 100%);
+  background: linear-gradient(to top, #f3887a 0%, #feb645 100%);
+
+}
+
+.form__btn2:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.form__btn3{
+  background: #FFCCFF;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFCCFF), to(#feb645));
+  background: -webkit-linear-gradient(top, #FFCCFF 0%, #feb645 100%);
+  background: linear-gradient(to bottom, #FF6699 0%, #feb645 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#FF6699), to(#feb645));
+  background: -webkit-linear-gradient(bottom, #FF6699 0%, #feb645 100%);
+  background: linear-gradient(to top, #FF6699 0%, #feb645 100%);
+
+}
+
+.form__btn3:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+
+.part_introduction {
+  position: relative;
+  display: inline-block;
+  height: 64px;
+  margin-left: 30px;
+  padding: 1rem 2rem 1rem 3rem;
+  color: rgb(4, 4, 4);
+}
+/* 
+.part_introduction:before {
+  position: absolute;
+  top: 0;
+  left: -30px;
+  content: '';
+  border-width: 32px 30px 32px 0;
+  border-style: solid;
+  border-color: transparent  #e6a890 transparent transparent;
+}
+
+.part_introduction:after {
+  position: absolute;
+  top: calc(50% - 7px);
+  left: -10px;
+  width: 14px;
+  height: 14px;
+  content: '';
+  border-radius: 50%;
+  background: #fff;
+} */
+
 /* メイン */
 
 .greeting{
@@ -11282,4 +11345,16 @@ font-weight: bold;
   height: 0;
   width: 0;
   opacity: 0;
+}
+
+/* ダイアログ */
+.dialog_style{ 
+margin-left: 300px;
+width: 1000px;
+height: 500px;
+border: 5px solid #b84c00
+}
+
+.dialog_style2{
+  border: 5px solid #b84c00
 }
