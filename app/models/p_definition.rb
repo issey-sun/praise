@@ -5,6 +5,8 @@ class PDefinition < ApplicationRecord
   has_one_attached :image, dependent: :destroy
   has_many :p_reviews, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  has_many :p_likes, dependent: :destroy
+
 
   validates :title, presence: true
   validates :body, presence: true

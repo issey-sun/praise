@@ -7,7 +7,6 @@ class PDefinitionsController < ApplicationController
   end
 
   def index
-    @todays_date = Date.today
     @definitions = Definition.all
     @p_definitions = PDefinition.all
   end
@@ -15,7 +14,7 @@ class PDefinitionsController < ApplicationController
   def create
     @p_definition = PDefinition.new(p_definition_params)
     if @p_definition.save
-      redirect_to root_path
+      redirect_to root_path(anchor:"praises")
     else
       render :new
     end
@@ -29,7 +28,7 @@ class PDefinitionsController < ApplicationController
     @p_answers = @p_definition.p_answers.includes(:user)
     @comment = Comment.new
     @comments = @p_definition.comments.includes(:user)
-    @todays_date = Date.today
+    @p_rank = PAnswer.find(PLike.where(p_definition_id: params[:id]).group(:p_answer_id).order('count(p_answer_id) desc').limit(1).pluck(:p_answer_id))
   end
 
   def edit

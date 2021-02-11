@@ -10287,6 +10287,69 @@ section.resume-section .resume-section-content {
   cursor: pointer;
 }
 
+.form__btn2{
+  background: #f3887a;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f3887a), to(#feb645));
+  background: -webkit-linear-gradient(top, #f3887a 0%, #feb645 100%);
+  background: linear-gradient(to bottom, #f3887a 0%, #feb645 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#f3887a), to(#feb645));
+  background: -webkit-linear-gradient(bottom, #f3887a 0%, #feb645 100%);
+  background: linear-gradient(to top, #f3887a 0%, #feb645 100%);
+
+}
+
+.form__btn2:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.form__btn3{
+  background: #FFCCFF;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFCCFF), to(#feb645));
+  background: -webkit-linear-gradient(top, #FFCCFF 0%, #feb645 100%);
+  background: linear-gradient(to bottom, #FF6699 0%, #feb645 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#FF6699), to(#feb645));
+  background: -webkit-linear-gradient(bottom, #FF6699 0%, #feb645 100%);
+  background: linear-gradient(to top, #FF6699 0%, #feb645 100%);
+
+}
+
+.form__btn3:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+
+.part_introduction {
+  position: relative;
+  display: inline-block;
+  height: 64px;
+  margin-left: 30px;
+  padding: 1rem 2rem 1rem 3rem;
+  color: rgb(4, 4, 4);
+}
+/* 
+.part_introduction:before {
+  position: absolute;
+  top: 0;
+  left: -30px;
+  content: '';
+  border-width: 32px 30px 32px 0;
+  border-style: solid;
+  border-color: transparent  #e6a890 transparent transparent;
+}
+
+.part_introduction:after {
+  position: absolute;
+  top: calc(50% - 7px);
+  left: -10px;
+  width: 14px;
+  height: 14px;
+  content: '';
+  border-radius: 50%;
+  background: #fff;
+} */
+
 /* メイン */
 
 .greeting{
@@ -11058,4 +11121,240 @@ font-weight: bold;
   font-size: 15px;
 }
 
+/* グラフ */
+.graph {
+  padding: 0 0 0 100px;
+}
 
+.word {
+  line-height: 0.5em;
+  color: #4169e1;
+}
+
+
+/* ////吹き出し（コメント） */
+/* 吹き出し本体 */
+.balloon{
+  position: relative;
+  padding: 20px;
+  background-color: #f7ae92;
+  border-radius: 30px;
+}
+/* 大きい丸 */
+.balloon::before{
+  content: '';
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background-color: #f7ae92;
+  left: -35px;
+  bottom: 15px;
+  width: 30px;
+  height: 30px;
+}
+/* 小さい丸 */
+.balloon::after{
+  content: '';
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background-color: #f7ae92;
+  left: -55px;
+  bottom: 10px;
+  width: 15px;
+  height: 15px;
+}
+
+
+/* 単語説明 */
+.anim750{
+  transition: all 750ms ease-in-out;
+}
+
+#Awesome{
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  
+  backface-visibility: hidden;
+}
+
+#Awesome .sticky{
+  transform: rotate(45deg);
+}
+
+#Awesome:hover .sticky{
+  transform: rotate(10deg);
+}
+
+#Awesome .sticky{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:180px;
+  height: 180px;
+}
+
+#Awesome .reveal .circle{
+  box-shadow: 0 1px 0px rgba(0,0,0,.15);
+  
+  font-family: 'helvetica neue', arial;
+  font-weight: 200;
+  line-height: 140px;
+  text-align: center;
+  
+  cursor: pointer;
+}
+
+#Awesome .reveal .circle{
+  background: #fafafa;
+}
+
+#Awesome .circle_wrapper{
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+
+#Awesome .circle{
+  position: absolute;
+  width: 140px;
+  height:  140px;
+  margin: 20px;
+  
+  border-radius: 999px;
+}
+
+#Awesome .back{
+  height: 10px;
+  top: 30px;
+}
+
+#Awesome:hover .back{
+  height: 90px;
+  top: 110px;
+}
+
+#Awesome .back .circle{
+  margin-top: -130px;
+  background-color: #fbec3f;
+
+  background-image: -webkit-linear-gradient(bottom, rgba(251,236,63,.0), rgba(255,255,255,.8));
+}
+
+#Awesome:hover .back .circle{
+  margin-top: -50px;
+}
+
+#Awesome .front{
+  height: 150px;
+  bottom: 0;
+  top: auto;
+  
+  -webkit-box-shadow: 0 -140px 20px -140px rgba(0,0,0,.3);
+}
+
+#Awesome:hover .front{
+  height: 70px;
+  
+  -webkit-box-shadow: 0 -60px 10px -60px rgba(0,0,0,.1);
+}
+
+#Awesome .front .circle{
+  margin-top: -10px;
+  background: #fbec3f;
+
+  background-image: -webkit-linear-gradient(bottom, rgba(251,236,63,.0) 75%, #f7bb37 95%);
+  background-image: -moz-linear-gradient(bottom, rgba(251,236,63,.0) 75%, #f7bb37 95%);
+  background-image: linear-gradient(bottom, rgba(251,236,63,.0) 75%, #f7bb37 95%);
+}
+
+#Awesome h4{
+  font-family: 'helvetica neue', arial;
+  font-weight: 200;
+  text-align: center;
+  position: absolute;
+  width: 180px;
+  height: 140px;
+  line-height: 140px;
+  
+  transition: opacity 50ms linear 400ms;
+}
+
+#Awesome:hover h4{
+  opacity: 0;
+  
+  transition: opacity 50ms linear 300ms;
+}
+
+#Awesome:hover .front .circle{
+  margin-top: -90px;
+  background-color: #e2d439;
+  background-position: 0 100px;
+}
+
+
+/* 単語 */
+.btn-rotation {
+  text-decoration: none;
+  color: #FFF;
+  font-weight: 700;
+  background-color: #e7976e;
+  width: 700px;
+  text-align: center;
+  padding: 16px;
+  position: relative;
+  opacity: 1 !important;
+  transition: all 0.4s;
+  line-height: 1.2;
+  border-radius: 4px;
+  border: 2px solid #e7976e;
+}
+.btn-rotation:hover {
+  transform: rotateX(180deg);
+  background-color: #FFF;
+  color: #e7976e;
+}
+.btn-rotation:hover span {
+  transform: rotateX(180deg);
+}
+.btn-rotation:hover span:nth-child(1) {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+.btn-rotation:hover span:nth-child(2) {
+  visibility: visible;
+  width: 100%;
+  height: inherit;
+  opacity: 1;
+}
+.btn-rotation span {
+  display: block;
+  transition: opacity 0.3s 0.2s;
+  width: 100%;
+  height: inherit;
+}
+.btn-rotation span:nth-child(2) {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+/* ダイアログ */
+.dialog_style{ 
+margin-left: 300px;
+width: 1000px;
+height: 500px;
+border: 5px solid #b84c00
+}
+
+.dialog_style2{
+  border: 5px solid #b84c00
+}

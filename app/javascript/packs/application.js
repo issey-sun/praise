@@ -5,11 +5,14 @@
 
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
-// require("../../assets/javascript/packs/node_modules/channels")
 require("channels")
+require("chartkick")
+require("chart.js")
 require("../packs/reviews")
 require("../packs/scripts")
-require('jquery');
+require("../packs/displays")
+require('jquery')
+
 
 // import 'bootstrap';
 // import '../stylesheets/application';

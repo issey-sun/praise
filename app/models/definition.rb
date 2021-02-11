@@ -5,6 +5,7 @@ class Definition < ApplicationRecord
   has_one_attached :image, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   validates :title, presence: true
   validates :body, presence: true

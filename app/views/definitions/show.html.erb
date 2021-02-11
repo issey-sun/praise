@@ -27,9 +27,9 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">回答一覧</a></li>
+                    <%# <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">回答一覧</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">一番票数の多い回答を見る</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">回答のデータ解析</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">回答のデータ解析</a></li> %>
                </ul>
             </div>
         </nav>
@@ -38,10 +38,10 @@
   <div class="inner">
     <div class="prototype__wrapper">
       <p class="prototype__hedding">
-        <br><%= @definition.title%></br>
+        <br><%= safe_join(@definition.title.split("\n"),tag(:br)) %></br>
       </p>
       <p class="prototype__hedding">
-      <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px double #333333; border-radius: 10px; background-color: #FFCC99; color: #000000;"><%= @definition.body %></div>
+      <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px double #333333; border-radius: 10px; background-color: #FFCC99; color: #000000;"><%= safe_join(@definition.body.split("\n"),tag(:br)) %></div>
       </p>
         <div class="prototype__manage">
         <% if user_signed_in? && current_user.id == @definition.user_id %>
@@ -49,7 +49,6 @@
           <%= link_to "削除する", definition_path(@definition), class: :prototype__btn, method: :delete %>
         <% end %>
         </div>
-      <%# // 画像があれば表示する %>
 
       <%# // answerゾーン %>
    
@@ -59,21 +58,32 @@
           <%= form_with(model: [@definition, @answer], local: true) do |f| %>
             <div class="field">
               <%= f.label :answer, "回答" %><br />
-              <%= f.text_field :answer, size: "50x10" %>
+              <%= f.text_area :answer, size: "50x2" %>
             </div>
             <div class="actions">
               <%= f.submit "送信する", class: :form__btn  %>
             </div>
           <% end %> 
         <% end %>
-        <ul class="comments_lists">
 
+      <ul class="comments_lists">
+        <br>
+        <% if @rank %>
+        <% @rank.each do |rank| %>
+        いいね数が最も多い回答</br>
+        <%= link_to rank.user.nickname, "/users/#{rank.user_id}", class: :comment_user %>
+          <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #fff0f5; color: #000000;"><%= safe_join(rank.answer.split("\n"),tag(:br)) %></div>
+          <i class="fas fa-heart"></i><%= rank.likes.count %>
+        <% end %>
+        <% end %>
+        </br></br></br>
+        
               <%= " 回答一覧 "%>
               <% if @answers %>
                 <% @answers.each do |answer| %>
               <li class="comments_neo-lists">
                 <%= link_to answer.user.nickname, "/users/#{answer.user_id}", class: :comment_user %>
-                <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #FFFFEE; color: #000000;"><%= answer.answer %></div> 
+                <div style="padding: 20px 40px; margin-bottom: 10px; border: 5px solid #333333; border-radius: 10px; background-color: #FFFFEE; color: #000000;"><%= safe_join(answer.answer.split("\n"),tag(:br)) %></div> 
                 
 
                  <% if current_user.already_liked?(answer) %>
@@ -86,45 +96,15 @@
                   <% end %>
                  <% end %>
                  <%= answer.likes.count %>
-                
-                <%= @todays_date%>      
-              <% end %>
-          <% end %>
-        <% end %>
+                <%= "(#{time_ago_in_words(answer.created_at)}前)" %>      
+                <% end %>
+                <% end %>
+               <% end %>
             </li>
         </ul>
       </div>
     </div>
 
-<%# <%= javascript_include_tag "reviews.js" %>  
-       
-      <%# <div class="prototype__comments">
-        <% if user_signed_in? %>
-         <%# <% if current_user %> 
-          <%# <%= form_with(model: [@definition, @comment], local: true) do |f| %> 
-            <%# <div class="field"> %>
-              <%# <%= f.label :text, "コメント" %> 
-               <%# <%= f.text_field :text %>  
-             <%# </div>  %>
-            <%# <div class="actions"> %>
-              <%# <%= f.submit "送信する", class: :form__btn %>  
-            <%# </div> %>
-           <%# <% end %>   
-        <%# <% end %> 
-        <%# <ul class="comments_lists">  %>
-              <%# <%= " コメントのテキスト "%>  
-              <%# <% if @comments %>  
-                <%# <% @comments.each do |comment| %>  
-                <%# <%= link_to comment.user.name, "/users/#{comment.user_id}", class: :comment_user %> 
-                 <%# <%= comment.text %>         
-                <%# <% end %>
-              <%# <% end %> 
-            <%# <% end %> 
-
-            <%# </li> %>
-        <%# </ul> %>
-      <%# </div> %>
-    <%# </div> %>
       <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>

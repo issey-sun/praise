@@ -73,9 +73,11 @@ ActiveRecord::Schema.define(version: 2021_01_30_090401) do
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "answer_id"
+    t.bigint "definition_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["answer_id"], name: "index_likes_on_answer_id"
+    t.index ["definition_id"], name: "index_likes_on_definition_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -122,9 +124,11 @@ ActiveRecord::Schema.define(version: 2021_01_30_090401) do
   create_table "p_likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "p_answer_id"
+    t.bigint "p_definition_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["p_answer_id"], name: "index_p_likes_on_p_answer_id"
+    t.index ["p_definition_id"], name: "index_p_likes_on_p_definition_id"
     t.index ["user_id"], name: "index_p_likes_on_user_id"
   end
 
@@ -185,6 +189,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_090401) do
   add_foreign_key "comments", "users"
   add_foreign_key "definitions", "users"
   add_foreign_key "likes", "answers"
+  add_foreign_key "likes", "definitions"
   add_foreign_key "likes", "users"
   add_foreign_key "notifications", "answers"
   add_foreign_key "notifications", "definitions"
@@ -196,6 +201,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_090401) do
   add_foreign_key "p_answers", "users"
   add_foreign_key "p_definitions", "users"
   add_foreign_key "p_likes", "p_answers"
+  add_foreign_key "p_likes", "p_definitions"
   add_foreign_key "p_likes", "users"
   add_foreign_key "p_reviews", "p_definitions"
   add_foreign_key "p_reviews", "users"
