@@ -18,4 +18,4 @@ user = User.create!(email: "admin@example.jp",
   admin: true)
 
   # user.image.attach(io: File.open(Rails.root.join("app/assets/images/download-2.jpg")), filename: "download-2.jpg")
-  user.image.attach(io: File.open("app/assets/images/homekatajiten.png"), filename: "homekatajiten.png", content_type: "image/png")
+  # user.image.attach(io: File.open("app/assets/images/homekatajiten.png"), filename: "homekatajiten.png", content_type: "image/png")
