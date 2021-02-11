@@ -1,6 +1,5 @@
 class PDefinitionsController < ApplicationController
   before_action :authenticate_user!, only: [:show]
-  before_action :blocking_edit_p_definition, only: %i[edit update destroy]
 
   def new
     @p_definition = PDefinition.new
@@ -38,7 +37,7 @@ class PDefinitionsController < ApplicationController
   def update
     @p_definition = PDefinition.find(params[:id])
     @p_definition.update(p_definition_params)
-    redirect_to root_path
+    redirect_to root_path(anchor:"praises")
   end
 
   def destroy
@@ -58,9 +57,6 @@ class PDefinitionsController < ApplicationController
     params.require(:p_definition).permit(:title, :body, :definition_day, :image, :user).merge(user_id: current_user.id)
   end
 
-  def blocking_edit_p_definition
-    redirect_to root_path, alert: "不正な操作です" unless (@p_definition.user == current_user) || current_user.admin?
-  end
 
 
 end

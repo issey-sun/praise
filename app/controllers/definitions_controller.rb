@@ -1,6 +1,5 @@
 class DefinitionsController < ApplicationController
  before_action :authenticate_user!, only: [:show]
- before_action :blocking_edit_definition, only: %i[edit update destroy]
 
   def new
     @definition = Definition.new
@@ -38,7 +37,7 @@ class DefinitionsController < ApplicationController
   def update
     @definition = Definition.find(params[:id])
     @definition.update(definition_params)
-    redirect_to root_path
+    redirect_to root_path(anchor:"ethics")
   end
 
   def destroy
@@ -58,9 +57,6 @@ class DefinitionsController < ApplicationController
     params.require(:definition).permit(:title, :body, :definition_day, :image, :user).merge(user_id: current_user.id)
   end
 
-  def blocking_edit_definition
-    redirect_to root_path, alert: "不正な操作です" unless (@definition.user == current_user) || current_user.admin?
-  end
 
  
 end
