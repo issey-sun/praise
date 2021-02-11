@@ -1,5 +1,6 @@
 {
   "name": "praise",
+  "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0-alpha",
@@ -18,3 +19,4 @@
     "webpack-dev-server": "^3.11.2"
   }
 }
+

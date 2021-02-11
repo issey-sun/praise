@@ -34,7 +34,6 @@ class User < ApplicationRecord
   validates :occupation, presence: true
   validates :position, presence: true
   validates :birth_day, presence: true
-  validates :image, presence: true
 
   with_options presence: true, numericality: { other_than: 1 } do
   validates :sex_id
