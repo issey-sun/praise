@@ -67,7 +67,7 @@ Rspec(systemspec)</br></br>
 # DEMO
 ## トップページにてサービス概要を説明
 ユーザーにサービス内容を読んでいただくため、飽きさせないようJavaScript、CSSでメリハリをつけました。
-![Top](https://user-images.githubusercontent.com/76093901/107856221-1b631880-6e6a-11eb-9fed-821e88f67e93.gif)</br>
+![Top](https://user-images.githubusercontent.com/76093901/107858240-8c103200-6e76-11eb-9212-242286b80a13.gif)</br>
 
 ## ログイン機能(devise)</br>
 ![新規登録](https://user-images.githubusercontent.com/76093901/107857241-97605f00-6e70-11eb-964d-13e6cc910b67.gif)</br>
