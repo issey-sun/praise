@@ -1,15 +1,4 @@
 @charset "UTF-8";
-/*!
-* Start Bootstrap - Resume v6.0.2 (https://startbootstrap.com/theme/resume)
-* Copyright 2013-2020 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap v4.5.3 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -10279,7 +10268,7 @@ section.resume-section .resume-section-content {
   background: -webkit-gradient(linear, left bottom, left top, from(#f1e767), to(#feb645));
   background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 100%);
   background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
-
+  border-radius: 10px;
 }
 
 .form__btn:hover {
@@ -10295,7 +10284,7 @@ section.resume-section .resume-section-content {
   background: -webkit-gradient(linear, left bottom, left top, from(#f3887a), to(#feb645));
   background: -webkit-linear-gradient(bottom, #f3887a 0%, #feb645 100%);
   background: linear-gradient(to top, #f3887a 0%, #feb645 100%);
-
+  border-radius: 10px;
 }
 
 .form__btn2:hover {
@@ -10311,7 +10300,7 @@ section.resume-section .resume-section-content {
   background: -webkit-gradient(linear, left bottom, left top, from(#FF6699), to(#feb645));
   background: -webkit-linear-gradient(bottom, #FF6699 0%, #feb645 100%);
   background: linear-gradient(to top, #FF6699 0%, #feb645 100%);
-
+  border-radius: 10px;
 }
 
 .form__btn3:hover {
@@ -11184,38 +11173,45 @@ font-weight: bold;
   line-height: 1.2;
   border-radius: 4px;
   border: 2px solid #e7976e;
+  border-radius: 10px;
 }
 .btn-rotation:hover {
   transform: rotateX(180deg);
   background-color: #FFF;
   color: #e7976e;
+  border-radius: 10px;
 }
 .btn-rotation:hover span {
   transform: rotateX(180deg);
+  border-radius: 10px;
 }
 .btn-rotation:hover span:nth-child(1) {
   visibility: hidden;
   height: 0;
   width: 0;
   opacity: 0;
+  border-radius: 10px;
 }
 .btn-rotation:hover span:nth-child(2) {
   visibility: visible;
   width: 100%;
   height: inherit;
   opacity: 1;
+  border-radius: 10px;
 }
 .btn-rotation span {
   display: block;
   transition: opacity 0.3s 0.2s;
   width: 100%;
   height: inherit;
+  border-radius: 10px;
 }
 .btn-rotation span:nth-child(2) {
   visibility: hidden;
   height: 0;
   width: 0;
   opacity: 0;
+  border-radius: 10px;
 }
 
 /* ダイアログ */
@@ -11223,9 +11219,11 @@ font-weight: bold;
 margin-left: 300px;
 width: 1000px;
 height: 500px;
-border: 5px solid #b84c00
+border: 5px solid #b84c00;
+border-radius: 10px;
 }
 
 .dialog_style2{
-  border: 5px solid #b84c00
+  border: 5px solid #b84c00;
+  border-radius: 10px;
 }

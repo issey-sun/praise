@@ -6,15 +6,13 @@
   <div class="inner">
 
 
-<h3>褒めるシチュエーションを定義しよう</h3></br>
+<h3>褒めるパートについて投稿しよう</h3></br>
 <%= form_with model: @p_definition, local: true do |f| %>
-<h5>Ⅰ. 定義するタイトルを入力してください</h5>
-
+<h5>Ⅰ. 相談する内容のタイトルを入力してください</h5>
 <%= f.text_area :title, size: "70x2", placeholder:"例）元気の良い挨拶ができる部下に対しての褒め方について" %></br>
-<br><h5>Ⅱ. 定義の詳細を入力してください</h5>
-
+<br><h5>Ⅱ. 相談内容の詳細を入力してください</h5>
 <%= f.text_area :body, size: "70x5", placeholder:"例) 毎朝「おはようございます！」すれ違うときには「お疲れさまです！」とハキハキ元気の良い新入社員がいます。私は以下のように褒めました。「〜さんが挨拶することで私も今日も元気に仕事ができます。今日もとっても嬉しいです。」その他もっと部下のやる気を引き出せる褒め方はありますか？" %></br>
-<%= f.submit "定義する" %>
+<%= f.submit "投稿する" %>
 <% end %>
 <br><i class="fas fa-undo-alt"></i> <%= link_to " 一覧に戻る ", root_path(anchor:"definitions") %></br>
 

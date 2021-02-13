@@ -1,5 +1,5 @@
 crumb :root do
-  link "定義一覧", root_path(anchor:"definitions")
+  link "投稿一覧", root_path(anchor:"definitions")
 end
 
 crumb :answers do
@@ -23,12 +23,12 @@ parent :root
 end
 
 crumb :definition do
-link "倫理のシチュエーションについて定義", new_definition_path
+link "倫理パート", new_definition_path
 parent :root
 end
 
 crumb :p_definition do
-link "褒めるについて定義", new_p_definition_path
+link "褒めるパート", new_p_definition_path
 parent :root
 end
 
