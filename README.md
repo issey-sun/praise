@@ -95,7 +95,7 @@ Rspec(systemspec)</br></br>
 ![検索](https://user-images.githubusercontent.com/76093901/107857229-857ebc00-6e70-11eb-8d24-48991016d292.gif)</br>
 
 ## ページネーション機能(kaminari)</br>
-ページが見やすよう投稿は3件表示。
+ユーザーがページが見やすよう投稿は3件表示。
 ![image](https://user-images.githubusercontent.com/76093901/107857290-f4f4ab80-6e70-11eb-863e-18fb6e8124c7.png)</br>
 
 ## 通知機能</br>
@@ -104,7 +104,7 @@ Rspec(systemspec)</br></br>
 
 
 ## SNSへのリンク共有機能</br>
-「褒め方辞典」をSNSにて共有し、より多くのユーザーに本アプリを使っていただく。
+より多くのユーザーに本アプリを使ってもらうため、「褒め方辞典」をSNSにて共有が可能に。
 ![SNSリンク共有](https://user-images.githubusercontent.com/76093901/107857154-ff627580-6e6f-11eb-90cf-777e4aaca9b3.gif)</br>
 
 ## パンくず機能(gretel)</br>
