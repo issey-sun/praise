@@ -7,32 +7,10 @@
         <meta name="author" content="" />
     </head>
     <body id="page-top">
-    <% breadcrumb :root %>
         <!-- Navigation-->
          <div id="page_top"><a href="#"></a></div>
       <main class="main">
   <div class="inner">
-    <% if user_signed_in? %>
-       <br><div class="greeting"> 
-         こんにちは、
-         <%= link_to "#{current_user.nickname}さん", user_path(current_user), class: :greeting__link %></br>
-            
-            <br><span class="balloon" style="float: right" >
-                　　「褒」ボタンをクリックして　　</br>
-                　　「褒め方」辞典を使ってみよう　　
-            </span></br></br></br>
-      
-         <br><a class="btn-emergency" href="#definitions" >
-            <span class="btn-emergency-bottom" ></span>
-            <span class="btn-emergency-top"><span>褒</span></span>
-        </a>
-      </div> 
-   <% else %> 
-      <div class="grid-6">
-            <%= link_to "", new_user_session_path, class: "post" %>
-            <%= link_to "", new_user_registration_path, class: "post" %>
-          </div>
-          <% end %>
         </div> 
         </div> 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
@@ -94,8 +72,30 @@
             </div>
         </nav>
         <!-- Page Content-->
+
+
         <div class="container-fluid p-0">
+        <div class="bg_image">
+<div class="bg_mask">
+ <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+      <% if user_signed_in? %>
+       <br><div class="greeting"> 
+         こんにちは、
+         <%= link_to "#{current_user.nickname}さん", user_path(current_user), class: :greeting__link %></br>
+          </div> 
+          <% end %>
             <!-- 褒め方辞典とは？-->
+            <% breadcrumb :root %>
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
                     <br><h1 class="mb-0">
@@ -114,28 +114,34 @@
                         <a class="index" href="#service">サービスの使い方について②</a>
                         </div>
                      </div>
+                     </div>
+                    </div>
             </section>
             <hr class="m-0" />
             <!-- 褒め方辞典の概要-->
+             <div class="bg_image2  ">
+            <div class="bg_mask2">
             <section class="resume-section" id="experience">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">褒め方辞典とは？</h2>
+                    <h2 class="mb-5">　　　褒め方辞典とは？</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <p>マネジメントは仕事においての「管理方法」として知られていますが、<span class="marker">人間関係を円滑にできる手法</span>でもあります。</p></br>
-                            <p>本サービスは色々な<span class="marker">「褒め方」</span>が勉強でき、マネジメントが学べるアプリケーションです。</p></br>
+                            <p>　　マネジメントは仕事においての「管理方法」として知られていますが</br></br>
+                            　　<span class="marker">人間関係を円滑にできる手法</span>でもあります。</p></br>
+                            <p>　　本サービスは色々な<span class="marker">「褒め方」</span>が勉強でき、マネジメントが学べるアプリケーションです。</p>
                         </div>
                     </div>
-                    <p class="image-sizes"><i class="fas fa-child"></i><i class="fas fa-child"></i><i class="fas fa-child"></i></p>
-                    <%= link_to "next => 「褒める」でマネジメント？", "#education", class: "next" %>
-                    <br><br><br>
-                    <p>※カーソルを合わせることで、単語の意味を確認できます。</p>
                     <div class="btn-rotation" ><span>マネジメントとは</span>
-                    <span>経営上の効果を最適化するため、人や資源、リスクなどを管理する手法のこと</span>
-                    </div></br>
+                    <span>経営上の効果を最適化するため、人や資源、リスク等を管理する手法</span>
+                    </div></br></br></br>
+                    　　　　　　　　　　　　<%= link_to "next => 「褒める」でマネジメント？", "#education", class: "next" %>
             </section>
+            </div>
+            </div>
             <hr class="m-0" />
             <!-- 褒めることでマネジメントとは？-->
+              <div class="bg_image3  ">
+            <div class="bg_mask2">
             <section class="resume-section" id="education">
                 <div class="resume-section-content">
                     <h2 class="mb-5">「褒める」でマネジメント？</h2>
@@ -149,31 +155,39 @@
                         </div>
                     </div>
                     <p class="image-size"><i class="fas fa-user-graduate"></i></p>
-                    <%= link_to "next => 褒めると倫理について", "#skills", class: "next" %></br></br>
                     <div class="btn-rotation" >
                         <span>エンハンシング効果とは</span>
                         <span>1925年にアメリカの発達心理学者エリザベス・ハーロック博士が、行った実験により</br>証明されたモチベーションを高める効果のこと</span>
-                    </div></br>
+                    </div></br></br>
+                        <%= link_to "next => 褒めると倫理について", "#skills", class: "next" %></br></br>
                 </div>
             </section>
+             </div>
+            </div>
             <hr class="m-0" />
             <!-- 褒めると倫理について-->
+             <div class="bg_image4  ">
+            <div class="bg_mask2">
             <section class="resume-section" id="skills">
                 <div class="resume-section-content">
                     <h2 class="mb-5">「褒める」と「倫理」について </h2>
                     <div class="flex-grow-1">
                         <br><h3 class="mb-0">「褒める」行為の前提に「倫理」がある</h3></br></br>
                         <p>いつも怒られて印象が悪い相手から、急に褒められてもやる気は上がらないですよね。</p></br>
-                        <p><span class="marker">人としての大切な行い（倫理）</span>が伴って初めて、「褒める」という行為が成り立ちます。</p>
+                        <p>人としての大切な行い（倫理）が伴って初めて、「褒める」という行為が成り立ちます。</p>
                     </div>
-                    <p class="image-size"><i class="fas fa-hands-helping"></i></p>                  
-                <%= link_to "next => 本サービスがおすすめの方", "#interests", class: "next" %></br></br>
-                <div class="btn-rotation" ><span>倫理とは</span><span>人として守るべき行いや道のこと</span></div></br>  
+                    <p class="image-size"><i class="fas fa-hands-helping"></i></p></br></br>                    
+                <div class="btn-rotation" ><span>倫理とは</span><span>人として守るべき行いや道のこと</span></div></br> 
+                <%= link_to "next => 本サービスがおすすめの方", "#interests", class: "next" %></br></br> 
                 </div>
 
             </section>
+            </div>
+            </div>
             <hr class="m-0" />
             <!-- サービスがおすすめの方-->
+            <div class="bg_image5  ">
+            <div class="bg_mask2">
             <section class="resume-section" id="interests">
                 <div class="resume-section-content">
                     <h2 class="mb-5">「褒め方辞典」がおすすめの方 </h2>
@@ -182,12 +196,16 @@
                         <p>・マネジメントをする、されるサラーリーマンとして働く人</p>
                         <p>・日常生活でも人間関係を円滑にしたい人　などなど</p>
                     </div>
-                    <p class="image-size">　<i class="fas fa-american-sign-language-interpreting"></i></p>
+                    <p class="image-size"><i class="fas fa-american-sign-language-interpreting"></i></p>
                 <%= link_to "next => サービスの使い方について①", "#awards", class: "next" %>
             </div>
             </section>
+             </div>
+            </div>
             <hr class="m-0" />
             <!-- Awards-->
+        <div class="bg_image6">
+        <div class="bg_mask">
             <section class="resume-section" id="awards">
                 <div class="resume-section-content">
                     <h2 class="mb-5">サービスの使い方について①</h2>
@@ -205,6 +223,8 @@
                 </div>
                 </div>
             </section>
+            </div>
+            </div>
  <!-- service-->
             <section class="resume-section" id="service">
                 <div class="resume-section-content">
@@ -236,12 +256,12 @@
                         <nobr><p>　　　　　　　　　　　　　　　成長を思って部下を叱るのであれは説得よりも納得できる叱り方・・・</p></br></nobr>
                         <nobr><p><span class="marker-harf3">褒めるパート</span>　　　例②（回答）〜さんが挨拶することで私も今日も元気に仕事ができます。</p></nobr>
                         <nobr><p>　　　　　　　　　　　　　　　今日もとっても嬉しいです。</p></br></nobr>
-                    <button class="form__btn2" onclick="document.getElementById('dialog2').close();">
+                    <button class="form__btn" onclick="document.getElementById('dialog2').close();">
                         OK
                     </button>
                     </dialog>
                             <br>
-                    <button class="form__btn2" onclick="document.getElementById('dialog2').show();">
+                    <button class="form__btn" onclick="document.getElementById('dialog2').show();">
                     2 「回答」の仕方について　
                     </button></br>
 
@@ -249,12 +269,12 @@
                     <dialog id="dialog3" class="dialog_style2" >
                         <br><big><b><p><span style="background-color:#FFCACA;">3 投票</span></p></b></big>
                         <nobr><p>2 の回答の中で、自分が思ういい回答を選び（複数可）<i class="fas fa-heart"></i>をクリックし「いいね」してください。</p></br></nobr>
-                    <button class="form__btn3" onclick="document.getElementById('dialog3').close();">
+                    <button class="form__btn" onclick="document.getElementById('dialog3').close();">
                         OK
                     </button>
                     </dialog>
                             <br>
-                    <button class="form__btn3" onclick="document.getElementById('dialog3').show();">
+                    <button class="form__btn" onclick="document.getElementById('dialog3').show();">
                     3 「いいね」の仕方について
                     </button></br></br></br></br>
 
@@ -266,6 +286,8 @@
             </section>
              <!-- definitions-->
              <% if user_signed_in? %>
+            <div class="bg_image6">
+            <div class="bg_mask">
             <section class="resume-section" id="definitions">
                 <div class="resume-section-content">
                     <h2 class="mb-5">投稿一覧</h2>
@@ -303,9 +325,9 @@
                          </div>
 
              </div>
-
-
             </section>
+            </div>
+            </div>
              <!-- 倫理パート-->
             <section class="resume-section" id="ethics">
                 <div class="resume-section-content">

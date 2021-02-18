@@ -4,7 +4,7 @@
     <title>Praise</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%# <%= favicon_link_tag('homekatajiten') %> 
+    <%= favicon_link_tag('homekatajiten') %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -12,19 +12,18 @@
   </head>
 
   <body>
-  <div class="flash-padding">
+   <%# <div class="flash-padding">
       <br><% if flash[:notice] %>
-        <div class="notification is-info">
-          <p class="notice"><%= notice %></p>
-          <div>
-          <% end %>
-      <br><% if flash[:alert] %>
-          <p class="alert"><%= alert %></p>
-          <div>
-          <% end %>
-          </div>
-
-    <div class="pan"><%= breadcrumbs separator: " &rsaquo; " %></div><br><br>  
-    <%= yield %>
+        <%# <div class="notification is-info"> %>
+          <%# <p class="notice"><%= notice %>
+          <%# <div> %>
+          <%# <% end %> 
+      <%# <br><% if flash[:alert] %> 
+          <%# <p class="alert"><%= alert %>
+          <%# <div> %>
+          <%# <% end %>
+          <%# </div> %>
+    <div class="pan"><%= breadcrumbs separator: " &rsaquo; " %></div>
+    <%= yield %>  
   </body>
 </html>
