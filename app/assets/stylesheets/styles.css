@@ -11223,28 +11223,28 @@ border-radius: 10px;
 
 .bg_image2 {
   /* 文字中央寄せ */
-  background-image: image-url(backimage.jpg);
+  background-image: url(backimage.jpg);
   background-size: cover;
   opacity:1.0;
 }
 
 .bg_image3 {
   /* 文字中央寄せ */
-  background-image: image-url(backimage2.jpg);
+  background-image: url(backimage2.jpg);
   background-size: cover;
   opacity:1.0;
 }
 
 .bg_image4 {
   /* 文字中央寄せ */
-  background-image: image-url(backimage3.jpg);
+  background-image: url(backimage3.jpg);
   background-size: cover;
   opacity:1.0;
 }
 
 .bg_image5 {
   /* 文字中央寄せ */
-  background-image: image-url(backimage4.jpg);
+  background-image: url(backimage4.jpg);
   background-size: cover;
   opacity:1.0;
 }
