@@ -49,7 +49,7 @@
 ![image](https://user-images.githubusercontent.com/76093901/108616644-8e642480-7452-11eb-9463-7b487c2ffa0d.png)</br>
 
 ### HTML, CSS, JavaScriptを使いユーザーを魅了する努力
-![レイアウト](https://user-images.githubusercontent.com/76093901/108616673-eb5fda80-7452-11eb-88b3-9245033781a8.gif)
+![レイアウト](https://user-images.githubusercontent.com/76093901/108616673-eb5fda80-7452-11eb-88b3-9245033781a8.gif)</br>
 文章を読んでいただく努力をするために躍動感のある動作を含め、ユーザーに楽しさを提供しました。</br>
 
 # リリース時の反響
