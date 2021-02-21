@@ -11200,54 +11200,6 @@ border-radius: 10px;
 
 
 
-/* backgroundimage */
-.bg_image {
-   /* 文字中央寄せ */
-   background-image: url(backgroundimage.jpg);
-   background-size: cover;
-   opacity:1.0;
-}
-
-.bg_mask {
-  height: 100%;
-  background: rgba(248, 236, 236, 0.5);
-  opacity: 1.0;
-}
-
-.bg_mask2 {
-  height: 100%;
-  background: rgba(255, 255, 255, 0.5);
-  opacity: 1.0;
-}
-
-
-.bg_image2 {
-  /* 文字中央寄せ */
-  background-image: url(backimage.jpg);
-  background-size: cover;
-  opacity:1.0;
-}
-
-.bg_image3 {
-  /* 文字中央寄せ */
-  background-image: url(backimage2.jpg);
-  background-size: cover;
-  opacity:1.0;
-}
-
-.bg_image4 {
-  /* 文字中央寄せ */
-  background-image: url(backimage3.jpg);
-  background-size: cover;
-  opacity:1.0;
-}
-
-.bg_image5 {
-  /* 文字中央寄せ */
-  background-image: url(backimage4.jpg);
-  background-size: cover;
-  opacity:1.0;
-}
 
 
 
