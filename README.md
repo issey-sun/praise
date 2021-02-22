@@ -46,7 +46,8 @@
 
 # 開発における工夫点
 ### PDCAサイクルの継続的な循環
-![image](https://user-images.githubusercontent.com/76093901/108616644-8e642480-7452-11eb-9463-7b487c2ffa0d.png)</br>
+![image](https://user-images.githubusercontent.com/76093901/108667954-91781700-751d-11eb-8bd8-8de0a25410bf.png)
+</br>
 
 ### HTML, CSS, JavaScriptを使いユーザーを魅了する努力
 ![レイアウト](https://user-images.githubusercontent.com/76093901/108616673-eb5fda80-7452-11eb-88b3-9245033781a8.gif)</br>
@@ -112,16 +113,6 @@ Rspec(systemspec)</br></br>
 ## 管理者権限</br>
 不適切な投稿などを削除できる。
 ![image](https://user-images.githubusercontent.com/76093901/107857306-0fc72000-6e71-11eb-8906-81afb3520604.png)</br>
-
-## Amazon S3機能</br>
-
-## Amazon EC2機能</br>
-
-# インフラ構成
-
-# 今後実装したい機能
-
-# DB設計
 
 # SNSリンク
 Qiita: https://qiita.com/narimiya</br>
