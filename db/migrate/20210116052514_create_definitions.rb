@@ -3,7 +3,6 @@ class CreateDefinitions < ActiveRecord::Migration[6.0]
     create_table :definitions do |t|
       t.text       :title,          null: false
       t.text       :body,           null: false
-      t.date       :definition_day
       t.references :user,           foreign_key: true
       t.timestamps
     end

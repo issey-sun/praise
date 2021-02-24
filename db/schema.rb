@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2021_01_30_090401) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "answer", null: false
-    t.date "answer_day"
     t.bigint "user_id"
     t.bigint "definition_id"
     t.datetime "created_at", precision: 6, null: false
@@ -44,26 +43,9 @@ ActiveRecord::Schema.define(version: 2021_01_30_090401) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "comment", null: false
-    t.bigint "user_id"
-    t.bigint "definition_id"
-    t.bigint "answer_id"
-    t.bigint "p_definition_id"
-    t.bigint "p_answer_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["answer_id"], name: "index_comments_on_answer_id"
-    t.index ["definition_id"], name: "index_comments_on_definition_id"
-    t.index ["p_answer_id"], name: "index_comments_on_p_answer_id"
-    t.index ["p_definition_id"], name: "index_comments_on_p_definition_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
   create_table "definitions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "title", null: false
     t.text "body", null: false
-    t.date "definition_day"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -102,7 +84,6 @@ ActiveRecord::Schema.define(version: 2021_01_30_090401) do
 
   create_table "p_answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "answer", null: false
-    t.date "answer_day"
     t.bigint "user_id"
     t.bigint "p_definition_id"
     t.datetime "created_at", precision: 6, null: false
@@ -114,7 +95,6 @@ ActiveRecord::Schema.define(version: 2021_01_30_090401) do
   create_table "p_definitions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "title", null: false
     t.text "body", null: false
-    t.date "definition_day"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -182,11 +162,6 @@ ActiveRecord::Schema.define(version: 2021_01_30_090401) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "definitions"
   add_foreign_key "answers", "users"
-  add_foreign_key "comments", "answers"
-  add_foreign_key "comments", "definitions"
-  add_foreign_key "comments", "p_answers"
-  add_foreign_key "comments", "p_definitions"
-  add_foreign_key "comments", "users"
   add_foreign_key "definitions", "users"
   add_foreign_key "likes", "answers"
   add_foreign_key "likes", "definitions"
