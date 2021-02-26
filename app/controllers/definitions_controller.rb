@@ -48,6 +48,14 @@ class DefinitionsController < ApplicationController
     end
   end
 
+  def new_guest
+    user = User.find_or_create_by!(nickname:'guest', email: 'guest@example.com', occupation: 'guest', position: 'guest', birth_day: '1990-10-10', sex_id: 2) do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.image.attach(io: File.open(Rails.root.join("app/assets/images/homekatajiten.png")), filename: "homekatajiten.png")
+    end
+    sign_in user
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
  
 
   private
