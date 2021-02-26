@@ -64,6 +64,11 @@
                       <i class="fas fa-sign-in-alt"></i>
                         ログイン
                  <% end %>
+                <li class="header__li">
+                 <%= link_to definitions_guest_sign_in_path, method: :post, class: "orange" do%>
+               <i class="fas fa-ghost"></i>
+                 ゲストログイン
+                <% end %>
         <% end %>
        </div>
      </div>
