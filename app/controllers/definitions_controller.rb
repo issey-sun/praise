@@ -25,8 +25,6 @@ class DefinitionsController < ApplicationController
     @p_review = PReview.new
     @answer = Answer.new
     @answers = @definition.answers.includes(:user)
-    @comment = Comment.new
-    @comments = @definition.comments.includes(:user)
     @rank = Answer.find(Like.where(definition_id: params[:id]).group(:answer_id).order('count(answer_id) desc').limit(1).pluck(:answer_id))
   end
 
@@ -44,7 +42,7 @@ class DefinitionsController < ApplicationController
     @definition = Definition.find(params[:id])
     if current_user == @definition.user
       @definition.destroy
-      redirect_to root_path
+      redirect_to root_path(anchor:"ethics")
     else
       render :show
     end

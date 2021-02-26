@@ -7,8 +7,6 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
-require("chartkick")
-require("chart.js")
 require("../packs/reviews")
 require("../packs/scripts")
 require('jquery');

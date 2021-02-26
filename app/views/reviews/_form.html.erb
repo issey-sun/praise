@@ -1,11 +1,10 @@
 
 
 <% if review.errors.any? %>
-  <div class="notification is-danger">
-    <h2><%= review.errors.count %>件のエラーがあります。</h2>
+  <div class="notification is-danger"><br>
     <ul>
       <% review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li>１度レビューをしているのでこれ以上のレビューはできかねますので、何卒ご了承くださいませ。</li>
       <% end %>
     </ul>
   </div>

@@ -14,7 +14,7 @@ def create
   if @p_review.save
     redirect_to p_definition_p_reviews_path(@p_review.p_definition)
   else
-    render "p_definitions/show"
+    render "p_reviews/new"
   end
 end
 

@@ -25,8 +25,6 @@ class PDefinitionsController < ApplicationController
     @review = Review.new
     @p_answer = PAnswer.new
     @p_answers = @p_definition.p_answers.includes(:user)
-    @comment = Comment.new
-    @comments = @p_definition.comments.includes(:user)
     @p_rank = PAnswer.find(PLike.where(p_definition_id: params[:id]).group(:p_answer_id).order('count(p_answer_id) desc').limit(1).pluck(:p_answer_id))
   end
 

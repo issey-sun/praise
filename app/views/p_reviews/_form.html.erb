@@ -1,17 +1,13 @@
-<p class="is-size-4 mb-3">レビューを書く</p>
 <% if p_review.errors.any? %>
-  <div class="notification is-danger">
-    <h2><%= p_review.errors.count %>件のエラーがあります。</h2>
+  <div class="notification is-danger"><br>
     <ul>
       <% p_review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li>１度レビューをしているのでこれ以上のレビューはできかねますので、何卒ご了承くださいませ。</li>
       <% end %>
     </ul>
   </div>
 <% end %>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <%= link_to "褒め方辞典", root_path, class: :prototype__user %>
-</nav>  
+
 <div class="rating-box mt-3">
 <%= form_with model: p_review, url: p_definition_p_reviews_path(p_definition), local: true do |f| %>
   <div class="main-rating">

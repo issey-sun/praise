@@ -14,7 +14,7 @@ def create
   if @review.save
     redirect_to definition_reviews_path(@review.definition)
   else
-    render "definitions/show"
+    render "reviews/new"
   end
 end
 
