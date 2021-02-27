@@ -62,7 +62,5 @@ class DefinitionsController < ApplicationController
   def definition_params
     params.require(:definition).permit(:title, :body, :definition_day, :image, :user).merge(user_id: current_user.id)
   end
-
-
  
 end
