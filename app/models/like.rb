@@ -3,8 +3,7 @@ class Like < ApplicationRecord
   belongs_to :answer
   belongs_to :definition
 
-  # validates_uniqueness_of :answer_id, scope: :user_id
-  # validates_uniqueness_of :definition_id, scope: :user_id
-
-
+  validates :user_id, presence: true
+  validates :answer_id, uniqueness: { scope: :user_id }, presence: true
+  validates :definition_id, uniqueness: { scope: :user_id }, presence: true
 end

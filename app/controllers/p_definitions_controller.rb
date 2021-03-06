@@ -52,7 +52,7 @@ class PDefinitionsController < ApplicationController
 
   private
   def p_definition_params
-    params.require(:p_definition).permit(:title, :body, :definition_day, :image, :user).merge(user_id: current_user.id)
+    params.require(:p_definition).permit(:title, :body, :user).merge(user_id: current_user.id)
   end
 
 
