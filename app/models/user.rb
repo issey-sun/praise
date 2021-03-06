@@ -33,11 +33,24 @@ class User < ApplicationRecord
   validates :occupation, presence: true
   validates :position, presence: true
   validates :birth_day, presence: true
-  # validates :image, presence: true
+  validates :image, presence: true
 
   with_options presence: true, numericality: { other_than: 1 } do
   validates :sex_id
   end
+
+
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  validates_format_of :password, with: PASSWORD_REGEX 
+  
+  VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
+  validates :password, format: { with: VALID_PASSWORD_REGEX }
+
+  validates :email, presence: true, uniqueness: { case_sensitive: true },
+  length: { maximum: 255 }
+
+  validates :admin, exclusion: {in: [true], message: "システムエラー：不正な値が入力されました"}
+
 
   def already_liked?(answer)
     self.likes.exists?(answer_id: answer.id)
@@ -71,17 +84,7 @@ default_scope -> { order(created_at: :desc) }
 # 一度に表示する投稿数
 paginates_per 8
 
- # # 簡単ログイン：ユーザー作成
-#  def self.guest
-#   image_path = open('./db/fixtures/guest/user.png')
-#   find_or_create_by!(email: 'guest@sample.com') do |user|
-#     user.password = SecureRandom.urlsafe_base64
-#     user.name = 'guest_user'
-#     user.image = image_path
-#     user.confirmed_at = Time.zone.now # Confirmable を使用している場合は必要
-#   end
-# end
-
+# 簡単ログイン：ユーザー作成
 def self.guest
   find_or_create_by!(email: 'guest@example.com') do |user|
     user.password = SecureRandom.urlsafe_base64

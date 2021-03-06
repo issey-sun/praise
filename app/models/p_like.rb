@@ -3,7 +3,7 @@ class PLike < ApplicationRecord
   belongs_to :p_answer
   belongs_to :p_definition
 
-  # validates_uniqueness_of :p_answer_id, scope: :user_id
-  # validates_uniqueness_of :p_definition_id, scope: :user_id
-
+  validates :user_id, presence: true
+  validates :p_answer_id, uniqueness: { scope: :user_id }, presence: true
+  validates :p_definition_id, uniqueness: { scope: :user_id }, presence: true
 end

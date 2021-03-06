@@ -20,7 +20,7 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-    params.require(:answer).permit(:answer, :answer_day, :image, :user, :definition).merge(user_id: current_user.id, definition_id: params[:definition_id])
+    params.require(:answer).permit(:answer, :user, :definition).merge(user_id: current_user.id, definition_id: params[:definition_id])
   end
 end
 

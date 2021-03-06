@@ -5,9 +5,8 @@
 褒め方辞典</br></br>
 
 # 本番環境
-（URL）https://praise-homekata.herokuapp.com/
-
-(テストユーザーID/Pass) admin@example.jp/Issei1234</br></br>
+（URL）http://54.178.1.201/
+※ゲストログイン機能があります
 
 # アプリ概要
 褒めることを軸に倫理を学び、マネジメントが勉強できるアプリケーションです。
@@ -44,17 +43,25 @@
 日々の通勤前や仕事と仕事の隙間時間、退社後に、褒め方辞典を開き、毎日の習慣とし倫理と褒め方について学んでいただきます。通知機能を使い、褒め方辞典を習慣化していただきます。</br></br>
 
 
-# 開発における工夫点
+# 開発・学びにおける工夫点
 ### PDCAサイクルの継続的な循環
 ![image](https://user-images.githubusercontent.com/76093901/108667954-91781700-751d-11eb-8bd8-8de0a25410bf.png)
 </br>
+
+
+### 学習において5分に１回メモにアウトプット
+毎分5分ごとにメモにアウトプットをし、自問自答を繰り返しております。（約300ページ）</br>
+メモの内容はRubyやJavaScript、HTML、CSS、プログラミングを行う上でのマインドなどです。</br>
+メモは検索機能を使うことでセカンドブレインの役割も果たし、理解の深掘りを効率的に行うことができております。</br>
+
+（メモの一部抜粋）
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1052793/830059ad-10dd-d2ca-e80d-71266f9142ec.png)
+
 
 ### HTML, CSS, JavaScriptを使いユーザーを魅了する努力
 ![レイアウト](https://user-images.githubusercontent.com/76093901/108616673-eb5fda80-7452-11eb-88b3-9245033781a8.gif)</br>
 文章を読んでいただくために躍動感のある動作を含めて、ユーザーに楽しさを提供しました。</br>
 
-# リリース時の反響
-（ここで自身が行ったSNSを活用したPDCAをPR)</br></br>
 
 # 使用技術
 Ruby:2.6.5</br> 
@@ -94,7 +101,7 @@ Rspec(systemspec)</br></br>
 
 ## ページネーション機能(kaminari)</br>
 ユーザーがページが見やすよう投稿は3件表示している。
-![image](https://user-images.githubusercontent.com/76093901/107857290-f4f4ab80-6e70-11eb-863e-18fb6e8124c7.png)</br>
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1052793/6247c994-701d-4bc2-d4a7-57fc7c38a690.png)</br>
 
 ## 通知機能</br>
 ユーザーがサイト内の状況を知れるよう、いいね、コメント、フォローする、フォローされたら通知される。
@@ -113,6 +120,29 @@ Rspec(systemspec)</br></br>
 ## 管理者権限</br>
 不適切な投稿などを削除できる。
 ![image](https://user-images.githubusercontent.com/76093901/107857306-0fc72000-6e71-11eb-8906-81afb3520604.png)</br>
+
+## テスト(Rspec/capybara/capybara_screenshot)</br>
+詳細は以下のQiitaの記事より確認できます。
+
+**Userのモデル単体テスト**</br>
+https://qiita.com/narimiya/items/8ec3cdc15b1134b04dce</br>
+
+**Adminのモデル単体テスト**</br>
+https://qiita.com/narimiya/items/8876a9c43ec26ad65fd4</br>
+
+**Likeのモデル単体テスト**</br>
+https://qiita.com/narimiya/items/708023931f4590901f42</br>
+
+**Notificationのモデル単体テスト**</br>
+https://qiita.com/narimiya/items/a0595d237bf1185f8f4b</br>
+
+**Relationshipのモデル単体テスト**</br>
+https://qiita.com/narimiya/items/11429a0064383fb177ee</br>
+
+**その他**</br>
+https://qiita.com/narimiya/items/4fa4ee9a19935eba3b94</br>
+
+今後、結合テストなど行っていきます。
 
 # SNSリンク
 Qiita: https://qiita.com/narimiya</br>
