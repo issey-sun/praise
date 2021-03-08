@@ -122,22 +122,10 @@ Rspec(systemspec)</br></br>
 ![image](https://user-images.githubusercontent.com/76093901/107857306-0fc72000-6e71-11eb-8906-81afb3520604.png)</br>
 
 ## テスト(Rspec/capybara/capybara_screenshot)</br>
-詳細は以下のQiitaの記事より確認できます。
 
-**Userのモデル単体テスト**</br>
-https://qiita.com/narimiya/items/8ec3cdc15b1134b04dce</br>
+テストについてのアウトプットを複数記事にしており、以下のQiitaの記事より確認できます。
 
-**Adminのモデル単体テスト**</br>
-https://qiita.com/narimiya/items/8876a9c43ec26ad65fd4</br>
-
-**Likeのモデル単体テスト**</br>
-https://qiita.com/narimiya/items/708023931f4590901f42</br>
-
-**Notificationのモデル単体テスト**</br>
-https://qiita.com/narimiya/items/a0595d237bf1185f8f4b</br>
-
-**Relationshipのモデル単体テスト**</br>
-https://qiita.com/narimiya/items/11429a0064383fb177ee</br>
+https://qiita.com/narimiya/private/58f5dfee2efd9909452a</br>
 
 **その他**</br>
 https://qiita.com/narimiya/items/4fa4ee9a19935eba3b94</br>
