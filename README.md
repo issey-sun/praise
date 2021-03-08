@@ -132,6 +132,12 @@ https://qiita.com/narimiya/items/4fa4ee9a19935eba3b94</br>
 
 今後、結合テストなど行っていきます。
 
+# 今後実装したい機能
+* Vue.jsを導入してSPA化をすることで更にUXを向上
+* chartkickを使用しグラフ機能によるデータの定量分析、及び視える化
+* ランキング機能を実装しユーザーのモチベーションを向上
+
+
 # SNSリンク
 Qiita: https://qiita.com/narimiya</br>
 twitter: https://twitter.com/NarimiyaIssa</br>
