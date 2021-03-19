@@ -76,11 +76,11 @@
 
                  <% if current_user.already_liked?(answer) %>
                   <%= link_to definition_answer_likes_path(@definition,answer), method: :delete do %>
-                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-heart", id="liking-btn"></i>
                   <% end %>
                   <% else %>
                   <%= link_to definition_answer_likes_path(@definition,answer), method: :post do %>
-                <i class="far fa-heart"></i>
+                <i class="far fa-heart", id="nolike-btn"></i> 
                   <% end %>
                  <% end %>
                  <%= answer.likes.count %>

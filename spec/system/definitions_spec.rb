@@ -11,23 +11,8 @@ RSpec.describe "Definitions", type: :system do
     # ログインする
     sign_in(@user)
 
-    # 新規投稿ページへのリンクがあることを確認する
-    expect(page).to have_content('投稿')
-
-    # 投稿作成ページに移動する
-    visit new_definition_path
-
-    # フォームに情報を入力する
-    fill_in 'definition[title]', with:@definition_title
-    fill_in 'definition[body]', with: @definition_body
-
-    # 送信するとDefinitionモデルのカウントが1上がることを確認する
-    expect{
-      find('input[name="commit"]').click
-    }.to change { Definition.count }.by(1)
-
-    # 投稿完了ページに遷移することを確認する
-    expect(current_path).to eq(root_path)
+    # 新規投稿する
+    definition_up(@definition_title, @definition_body)
 
     # トップページに遷移する
     visit root_path
@@ -157,4 +142,118 @@ RSpec.describe '投稿の削除', type: :system do
           expect(page).to have_no_content('削除する'), href: definition_path(@definition1)
         end
     end
+end
+
+RSpec.describe '投稿のタイトルの検索', type: :system do
+  before do
+    @definition = FactoryBot.create(:definition)
+    @definition_title = "あいうえお"
+    @definition_body = Faker::Lorem.sentence
+  end
+    context '投稿の検索ができるとき' do
+        it 'ログインしたユーザーは自らが投稿した投稿の検索ができる' do
+        # definitionを投稿したユーザーでログインする
+        sign_in(@definition.user)
+
+        # 新規投稿する
+        definition_up(@definition_title, @definition_body)
+      
+        # 投稿ページに移動する
+        visit root_path(anchor:"definitions")
+
+        # 検索欄に検索キーワードを入力する
+        fill_in 'q[title_cont]', with: 'あ'
+        # 検索ボタンをクリックする
+        find('#definition_title_search').click
+        # 検索結果があることを確認する
+        expect(page).to have_content(@definition.title)
+        end
+   end
+end
+
+RSpec.describe 'ページネーションについて', type: :system do
+    before do
+      @definition = FactoryBot.create(:definition)
+      @definition_title = Faker::Lorem.sentence
+      @definition_body = Faker::Lorem.sentence
+    end
+      context 'ページネーションでページ遷移ができるとき' do
+          it 'ログインしたユーザーはページネーションでページ遷移ができる' do
+          # definitionを投稿したユーザーでログインする
+          sign_in(@definition.user)
+  
+          # ①新規投稿する(投稿は3件表示のため4つ投稿を行う)
+          definition_up(@definition_title, @definition_body)
+
+          # ②新規投稿する(投稿は3件表示のため4つ投稿を行う)
+          definition_up(@definition_title, @definition_body)
+
+          # ③新規投稿する(投稿は3件表示のため4つ投稿を行う)
+          definition_up(@definition_title, @definition_body)
+
+          # ④新規投稿する(投稿は3件表示のため4つ投稿を行う)
+          definition_up(@definition_title, @definition_body)
+        
+          # 投稿ページに移動する
+          visit root_path(anchor:"ethics")
+
+          # ページがあることを確認
+          expect(page).to have_css(".page-link")
+
+          # ページネーション'2'のボタンをクリックし、次ページへと行く
+          expect{ find_link('2', rel="next").click }
+
+          # ページ遷移していることを確認し、投稿があることを確認する
+          page_up(@definition)
+
+          # ページネーション'1'のボタンをクリックし前ページへと行く
+          expect{ find_link('1', rel="prev").click }
+
+          # ページ遷移していることを確認し、投稿があることを確認する
+          page_up(@definition)
+
+          # ページネーションボタン'最後'のボタンをクリックし、最後のページへと行く
+          expect{ find_link('最後', ".page-link").click }
+
+          # ページ遷移していることを確認し、投稿があることを確認する
+          page_up(@definition)
+           
+          # ページネーションボタン'最初'のボタンをクリックし、最初のページへと行く
+          expect{ find_link('最初', ".page-link").click }
+
+          # ページ遷移していることを確認し、投稿があることを確認する
+          page_up(@definition)
+       end
+    end
+end
+  
+
+RSpec.describe 'ダイアログ表示について', type: :system do
+    context 'ダイアログ表示ができるとき' do
+        it 'ダイアログボタンをクリックするとダイアログ表示ができる' do
+        #トップページへ移動する
+        visit root_path
+        
+        # トップページにダイアログボタンが存在することを確認する
+        expect(page).to have_css(".form__btn")
+
+        # ダイアログボタンをクリックする
+        expect{ find_link('1 「相談」の仕方について', ".form__btn").click }
+
+        # ダイアログの内容が表示されていることを確認する
+        expect(page).to have_content('相談')
+
+        # ダイアログボタンをクリックする
+        expect{ find_link('2 「回答」の仕方について', ".form__btn").click }
+
+        # ダイアログの内容が表示されていることを確認する
+        expect(page).to have_content('回答')
+
+        # ダイアログボタンをクリックする
+        expect{ find_link('3 「いいね」の仕方について', ".form__btn").click }
+
+        # ダイアログの内容が表示されていることを確認する
+        expect(page).to have_content('いいね')
+     end
+  end
 end
